@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laxmi Farsan - Bhanjibhai Gathya Wala & Sons</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandMaroon: '#721c24',
+                        brandGold: '#cca43b',
+                        brandCream: '#fdfbf7',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Plus+Jakarta+Sans:wght=300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .heading-font { font-family: 'Marcellus', serif; }
+    </style>
+</head>
+<body class="bg-brandCream text-gray-800">
+
+    <!-- Header / Navigation -->
+    <header class="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex flex-col">
+                <span class="heading-font text-2xl font-bold text-brandMaroon tracking-wide">Laxmi Farsan</span>
+                <span class="text-xs uppercase tracking-widest text-brandGold font-semibold -mt-1">Bhanjibhai Gathya Wala & Sons</span>
+            </div>
+            <nav class="flex font-medium text-sm tracking-wide">
+                <a href="#home" class="text-brandMaroon font-semibold hover:opacity-80 transition">Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-gradient-to-br from-amber-50 to-orange-100/50 py-20 lg:py-28 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6 max-w-xl">
+                <span class="text-brandGold font-semibold tracking-widest uppercase text-sm block">Authentic Indian Snacks</span>
+                <h1 class="heading-font text-4xl sm:text-5xl lg:text-6xl text-brandMaroon font-bold leading-tight">
+                    Authentic Farsan Tradition, Freshly Crafted
+                </h1>
+                <p class="text-gray-600 text-lg leading-relaxed">
+                    Bringing you taste and tradition curated perfectly by Bhanjibhai Gathya Wala & Sons. Every recipe is packed with quality ingredients and crisp flavor.
+                </p>
+                <div class="pt-2 flex flex-wrap gap-4">
+                    <a href="#menu-section" class="inline-block bg-brandMaroon text-white px-6 py-3 rounded-lg font-medium shadow-md hover:bg-opacity-90 transition transform hover:-translate-y-0.5">View Our Menu</a>
+                    <a href="https://wa.me/message/K2B3I46KNT2WK1" target="_blank" class="inline-block bg-emerald-600 text-white px-6 py-3 rounded-lg font-medium shadow-md hover:bg-emerald-700 transition transform hover:-translate-y-0.5 flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Order via WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <div class="bg-white p-8 rounded-2xl shadow-xl max-w-sm border border-amber-100 text-center space-y-4 transform hover:scale-105 transition duration-300 group cursor-default">
+                    <div class="w-16 h-16 bg-amber-50 rounded-full flex items-center justify-center mx-auto text-brandGold text-2xl group-hover:bg-brandMaroon group-hover:text-white transition duration-300">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+                    <h3 class="heading-font text-xl font-bold text-brandMaroon">100% Pure & Hygienic</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">
+                        Upholding time-honored benchmarks of traditional snack preparation for an uncompromised experience.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="heading-font text-3xl sm:text-4xl text-brandMaroon font-bold mb-4">About Us</h2>
+                <div class="w-24 h-0.5 bg-brandGold mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-4 text-gray-600 text-lg leading-relaxed">
+                    <p>
+                        Welcome to <strong class="text-brandMaroon">Laxmi Farsan</strong>, home to authentic Indian savories proudly driven by the heritage of <strong>Bhanjibhai Gathya Wala & Sons</strong>. 
+                    </p>
+                    <p>
+                        For generations, we have stayed committed to capturing the true essence of traditional tastes. By utilizing pristine ingredients and classic cooking techniques, we ensure that every batch retains its distinct crispness and unmatched aroma.
+                    </p>
+                </div>
+                <div class="bg-gradient-to-tr from-brandMaroon to-red-950 p-8 rounded-2xl text-amber-100 text-center space-y-4 shadow-md cursor-pointer transform hover:rotate-1 transition duration-300" onclick="alert('Our heritage is our bond. We source clean, premium ingredients daily!')">
+                    <i class="fa-solid fa-award text-4xl text-brandGold animate-pulse"></i>
+                    <h4 class="heading-font text-2xl font-bold text-white">Our Promise</h4>
+                    <p class="text-sm leading-relaxed opacity-90">
+                        Whether it is for your daily tea-time rituals, a family function, or a festive celebration, our mission remains to deliver premium, authentic crunch directly to your table.
+                    </p>
+                    <span class="inline-block text-xs bg-white/10 text-white px-3 py-1 rounded-full border border-white/20 mt-2">Click to view philosophy</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrated Traditional Menu Section -->
+    <section id="menu-section" class="py-20 bg-amber-50/40 border-t border-b border-orange-100/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-xs uppercase tracking-widest text-brandGold font-bold">Bhanjibhai Gathya Wala & Sons</span>
+                <h2 class="heading-font text-3xl sm:text-4xl font-bold text-brandMaroon mt-1">Our Traditional Menu</h2>
+                <div class="w-24 h-0.5 bg-brandGold mx-auto mt-3"></div>
+            </div>
+
+            <!-- Menu Grid Layout -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Fafda Card -->
+                <div class="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 border-b-4 border-b-brandGold transform hover:-translate-y-1 transition duration-300">
+                    <div class="w-full h-44 bg-gray-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
+                        <img class="w-full h-full object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRv1tva_HOiN9ka-mzQTEFX7eyhLB_psHqSnsVW1N9sWA&s=10" alt="Fafda">
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-900 heading-font">Fafda</h3>
+                </div>
+                
+                <!-- Jalebi (Regular) Card -->
+                <div class="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 border-b-4 border-b-brandGold transform hover:-translate-y-1 transition duration-300">
+                    <div class="w-full h-44 bg-gray-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
+                        <img class="w-full h-full object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKYI9-F039mI4l_YiKRmH2dN17J4MR9_Qdew8ZY66syFm7upd-ORXai71E&s=10" alt="Jalebi (Regular)">
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-900 heading-font">Jalebi (Regular)</h3>
+                </div>
+                
+                <!-- Vanela Gathya Card -->
+                <div class="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 border-b-4 border-b-brandGold transform hover:-translate-y-1 transition duration-300">
+                    <div class="w-full h-44 bg-gray-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
+                        <img class="w-full h-full object-cover" src="https://www.nehascookbook.com/wp-content/uploads/2022/11/Vanela-gathiya-WS-500x500.jpg" alt="Vanela Gathya">
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-900 heading-font">Vanela Gathya</h3>
+                </div>
+                
+                <!-- Jalebi (Ghee) Card -->
+                <div class="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 border-b-4 border-b-brandGold transform hover:-translate-y-1 transition duration-300">
+                    <div class="w-full h-44 bg-gray-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
+                        <img class="w-full h-full object-cover" src="https://static.toiimg.com/thumb/53099699.cms?width=1200&height=900" alt="Jalebi (Ghee)">
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-900 heading-font">Jalebi (Ghee)</h3>
+                </div>
+                
+                <!-- Khaman Card -->
+                <div class="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 border-b-4 border-b-brandGold transform hover:-translate-y-1 transition duration-300">
+                    <div class="w-full h-44 bg-gray-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
+                        <img class="w-full h-full object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3UJlEHeKisuScn5pu3-7Ai_oaVMeQn9RU2OjC96NVKTDCVK5svTFeEiA&s=10" alt="Khaman">
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-900 heading-font">Khaman</h3>
+                </div>
+                
+                <!-- Vadapav Card -->
+                <div class="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 border-b-4 border-b-brandGold transform hover:-translate-y-1 transition duration-300">
+                    <div class="w-full h-44 bg-gray-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
+                        <img class="w-full h-full object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUVAnCf6oH7-t5ZGV7ZDElAK4AuWPLubLwzfVRUR_-Sg&s=10" alt="Vadapav">
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-900 heading-font">Vadapav</h3>
+                </div>
+                
+                <!-- Samosa Card -->
+                <div class="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 border-b-4 border-b-brandGold transform hover:-translate-y-1 transition duration-300">
+                    <div class="w-full h-44 bg-gray-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
+                        <img class="w-full h-full object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVnM9-UQkg8-slBwaHoqrVDM6shxKn8CXsOCObKs0G_UqIRG4MpQ71OZc&s=10" alt="Samosa">
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-900 heading-font">Samosa</h3>
+                </div>
+                
+                <!-- Dahi Kachori Card -->
+                <div class="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 border-b-4 border-b-brandGold transform hover:-translate-y-1 transition duration-300">
+                    <div class="w-full h-44 bg-gray-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
+                        <img class="w-full h-full object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQal3L1UC7c-AurL7Wvv7t52pZyPrl9GXHe-usHHWYKkdCek2cSpuqO-ng&s=10" alt="Dahi Kachori">
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-900 heading-font">Dahi Kachori</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialities Showcase Section -->
+    <section id="specialities" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="heading-font text-3xl font-bold text-brandMaroon">Our Specialities</h2>
+                <div class="w-24 h-0.5 bg-brandGold mx-auto mt-3 mb-4"></div>
+                <p class="text-gray-500">Click the categories below to preview our master selections</p>
+            </div>
+
+            <!-- Tab Selection Buttons (Fixed Mappings) -->
+            <div class="flex justify-center space-x-4 mb-12">
+                <button onclick="switchTab('gathya')" id="btn-gathya" class="px-5 py-2 rounded-full font-semibold text-sm transition shadow-sm bg-brandMaroon text-white">Signature Gathya</button>
+                <button onclick="switchTab('farsan')" id="btn-farsan" class="px-5 py-2 rounded-full font-semibold text-sm transition shadow-sm bg-white text-gray-600 hover:bg-gray-100">Spicy Mixtures</button>
+                <button onclick="switchTab('hampers')" id="btn-hampers" class="px-5 py-2 rounded-full font-semibold text-sm transition shadow-sm bg-white text-gray-600 hover:bg-gray-100">Festive Platters</button>
+            </div>
+
+            <!-- Tab Content Dynamic Container -->
+            <div class="max-w-3xl mx-auto bg-white p-8 rounded-2xl border border-gray-100 shadow-sm min-h-[200px] flex items-center justify-center text-center">
+                <!-- Gathya Content -->
+                <div id="content-gathya" style="display: block;" class="space-y-4">
+                    <div class="w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center text-brandGold mx-auto text-xl">
+                        <i class="fa-solid fa-bowl-food"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-brandMaroon heading-font">Pure Besan Gathya</h3>
+                    <p class="text-gray-600 max-w-xl mx-auto">Finely textured, flawlessly crisp, and melted down to perfection according to old-world heritage recipes handled directly by our senior chefs.</p>
+                </div>
+
+                <!-- Farsan Content -->
+                <div id="content-farsan" style="display: none;" class="space-y-4">
+                    <div class="w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center text-brandGold mx-auto text-xl">
+                        <i class="fa-solid fa-pepper-hot"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-brandMaroon heading-font">Spicy Mix Farsan</h3>
+                    <p class="text-gray-600 max-w-xl mx-auto">A rich, balanced blend of quality home spices, native crunchy sev, fried lentils, and meticulously handpicked mixed nuts.</p>
+                </div>
+
+                <!-- Hampers Content -->
+                <div id="content-hampers" style="display: none;" class="space-y-4">
+                    <div class="w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center text-brandGold mx-auto text-xl">
+                        <i class="fa-solid fa-box-open"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-brandMaroon heading-font">Festive Gift Boxes</h3>
+                    <p class="text-gray-600 max-w-xl mx-auto">Custom arrangement variations of light, savory options curated cleanly to order for your family celebrations and wedding event functions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="heading-font text-3xl font-bold text-brandMaroon">Contact Us</h2>
+                <div class="w-24 h-0.5 bg-brandGold mx-auto mt-3"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Location Link Card Layout -->
+                <a href="https://maps.app.goo.gl/J8MRjE8oBhTBUEP39" target="_blank" class="block bg-gray-50 p-6 rounded-xl border border-gray-100 group cursor-pointer hover:border-brandGold hover:shadow-md transition duration-300">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-amber-100/60 rounded-xl flex items-center justify-center text-brandMaroon shrink-0 mt-1 group-hover:bg-brandMaroon group-hover:text-white transition duration-300">
+                            <i class="fa-solid fa-map-location-dot text-lg"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between flex-wrap gap-2">
+                                <h4 class="font-bold text-gray-900 text-base heading-font">Our Location</h4>
+                                <span class="text-[10px] text-brandMaroon font-semibold border border-red-200 bg-red-50 px-2 py-0.5 rounded flex items-center gap-1 transition duration-300 group-hover:bg-brandMaroon group-hover:text-white group-hover:border-transparent">
+                                    Open Maps <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i>
+                                </span>
+                            </div>
+                            <p id="store-address" class="text-gray-600 text-sm mt-2 leading-relaxed">Devji nager shop no. 5 near narpoli gaw bhivandi.</p>
+                            <p class="text-brandGold font-medium text-xs mt-1 uppercase tracking-wider">Bhiwandi, Maharashtra</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Phone & WhatsApp Card Layout -->
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 space-y-4">
+                    <!-- Call Section -->
+                    <a href="tel:+919975222349" class="flex items-center space-x-4 p-3 bg-white rounded-lg border border-gray-100 hover:border-brandGold transition duration-300 group">
+                        <div class="w-10 h-10 bg-amber-100/60 rounded-lg flex items-center justify-center text-brandMaroon group-hover:bg-brandMaroon group-hover:text-white transition duration-300">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-400 font-medium uppercase">Call Us Directly</p>
+                            <p class="text-gray-800 font-semibold text-sm tracking-wide">+91 9975222349</p>
+                        </div>
+                    </a>
+
+                    <!-- WhatsApp Section -->
+                    <a href="https://wa.me/message/K2B3I46KNT2WK1" target="_blank" class="flex items-center space-x-4 p-3 bg-white rounded-lg border border-gray-100 hover:border-emerald-500 transition duration-300 group">
+                      
