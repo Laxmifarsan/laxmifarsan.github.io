@@ -18,6 +18,27 @@
                 }
             }
         }
+        
+        // Corrected JS for Tab Switching
+        function switchTab(tabId) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('block'));
+
+            // Reset all buttons
+            document.querySelectorAll('button[id^="btn-"]').forEach(btn => {
+                btn.classList.remove('bg-brandMaroon', 'text-white');
+                btn.classList.add('bg-white', 'text-gray-600');
+            });
+
+            // Show selected content
+            document.getElementById('content-' + tabId).classList.remove('hidden');
+            document.getElementById('content-' + tabId).classList.add('block');
+
+            // Highlight selected button
+            document.getElementById('btn-' + tabId).classList.add('bg-brandMaroon', 'text-white');
+            document.getElementById('btn-' + tabId).classList.remove('bg-white', 'text-gray-600');
+        }
     </script>
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -105,7 +126,7 @@
         </div>
     </section>
 
-    <!-- Integrated Traditional Menu Section -->
+    <!-- Menu Section -->
     <section id="menu-section" class="py-20 bg-amber-50/40 border-t border-b border-orange-100/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -113,8 +134,10 @@
                 <h2 class="heading-font text-3xl sm:text-4xl font-bold text-brandMaroon mt-1">Our Traditional Menu</h2>
                 <div class="w-24 h-0.5 bg-brandGold mx-auto mt-3"></div>
             </div>
-
             <!-- Menu Grid Layout -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Cards Omitted for brevity in this example but you have them in your file --
+                        <!-- Menu Grid Layout -->
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 <!-- Fafda Card -->
                 <div class="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 border-b-4 border-b-brandGold transform hover:-translate-y-1 transition duration-300">
@@ -182,6 +205,9 @@
             </div>
         </div>
     </section>
+            </div>
+        </div>
+    </section>
 
     <!-- Specialities Showcase Section -->
     <section id="specialities" class="py-20 bg-gray-50">
@@ -192,40 +218,24 @@
                 <p class="text-gray-500">Click the categories below to preview our master selections</p>
             </div>
 
-            <!-- Tab Selection Buttons (Fixed Mappings) -->
             <div class="flex justify-center space-x-4 mb-12">
                 <button onclick="switchTab('gathya')" id="btn-gathya" class="px-5 py-2 rounded-full font-semibold text-sm transition shadow-sm bg-brandMaroon text-white">Signature Gathya</button>
-                <button onclick="switchTab('farsan')" id="btn-farsan" class="px-5 py-2 rounded-full font-semibold text-sm transition shadow-sm bg-white text-gray-600 hover:bg-gray-100">Spicy Mixtures</button>
-                <button onclick="switchTab('hampers')" id="btn-hampers" class="px-5 py-2 rounded-full font-semibold text-sm transition shadow-sm bg-white text-gray-600 hover:bg-gray-100">Festive Platters</button>
+                <button onclick="switchTab('farsan')" id="btn-farsan" class="px-5 py-2 rounded-full font-semibold text-sm transition shadow-sm bg-brandmaroon text-white">Spicy Mixtures</button>
+                <button onclick="switchTab('hampers')" id="btn-hampers" class="px-5 py-2 rounded-full font-semibold text-sm transition shadow-sm bg-brandmaroon text-white">Festive Platters</button>
             </div>
 
-            <!-- Tab Content Dynamic Container -->
             <div class="max-w-3xl mx-auto bg-white p-8 rounded-2xl border border-gray-100 shadow-sm min-h-[200px] flex items-center justify-center text-center">
-                <!-- Gathya Content -->
-                <div id="content-gathya" style="display: block;" class="space-y-4">
-                    <div class="w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center text-brandGold mx-auto text-xl">
-                        <i class="fa-solid fa-bowl-food"></i>
-                    </div>
+                <div id="content-gathya" class="space-y-4 tab-content block">
                     <h3 class="font-bold text-xl text-brandMaroon heading-font">Pure Besan Gathya</h3>
-                    <p class="text-gray-600 max-w-xl mx-auto">Finely textured, flawlessly crisp, and melted down to perfection according to old-world heritage recipes handled directly by our senior chefs.</p>
+                    <p class="text-gray-600 max-w-xl mx-auto">Finely textured, flawlessly crisp, and melted down to perfection according to old-world heritage recipes.</p>
                 </div>
-
-                <!-- Farsan Content -->
-                <div id="content-farsan" style="display: none;" class="space-y-4">
-                    <div class="w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center text-brandGold mx-auto text-xl">
-                        <i class="fa-solid fa-pepper-hot"></i>
-                    </div>
+                <div id="content-farsan" class="space-y-4 tab-content hidden">
                     <h3 class="font-bold text-xl text-brandMaroon heading-font">Spicy Mix Farsan</h3>
-                    <p class="text-gray-600 max-w-xl mx-auto">A rich, balanced blend of quality home spices, native crunchy sev, fried lentils, and meticulously handpicked mixed nuts.</p>
+                    <p class="text-gray-600 max-w-xl mx-auto">A rich, balanced blend of quality home spices, native crunchy sev, and fried lentils.</p>
                 </div>
-
-                <!-- Hampers Content -->
-                <div id="content-hampers" style="display: none;" class="space-y-4">
-                    <div class="w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center text-brandGold mx-auto text-xl">
-                        <i class="fa-solid fa-box-open"></i>
-                    </div>
+                <div id="content-hampers" class="space-y-4 tab-content hidden">
                     <h3 class="font-bold text-xl text-brandMaroon heading-font">Festive Gift Boxes</h3>
-                    <p class="text-gray-600 max-w-xl mx-auto">Custom arrangement variations of light, savory options curated cleanly to order for your family celebrations and wedding event functions.</p>
+                    <p class="text-gray-600 max-w-xl mx-auto">Custom arrangement variations of light, savory options curated cleanly to order.</p>
                 </div>
             </div>
         </div>
@@ -243,35 +253,34 @@
                 <!-- Location Link Card Layout -->
                 <a href="https://maps.app.goo.gl/J8MRjE8oBhTBUEP39" target="_blank" class="block bg-gray-50 p-6 rounded-xl border border-gray-100 group cursor-pointer hover:border-brandGold hover:shadow-md transition duration-300">
                     <div class="flex items-start space-x-4">
-                        <div class="w-12 h-12 bg-amber-100/60 rounded-xl flex items-center justify-center text-brandMaroon shrink-0 mt-1 group-hover:bg-brandMaroon group-hover:text-white transition duration-300">
+                        <div class="w-12 h-12 bg-amber-100/60 rounded-xl flex items-center justify-center text-brandMaroon shrink-0 group-hover:bg-brandMaroon group-hover:text-white transition duration-300">
                             <i class="fa-solid fa-map-location-dot text-lg"></i>
                         </div>
                         <div class="flex-1">
-                            <div class="flex items-center justify-between flex-wrap gap-2">
-                                <h4 class="font-bold text-gray-900 text-base heading-font">Our Location</h4>
-                                <span class="text-[10px] text-brandMaroon font-semibold border border-red-200 bg-red-50 px-2 py-0.5 rounded flex items-center gap-1 transition duration-300 group-hover:bg-brandMaroon group-hover:text-white group-hover:border-transparent">
-                                    Open Maps <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i>
-                                </span>
-                            </div>
-                            <p id="store-address" class="text-gray-600 text-sm mt-2 leading-relaxed">Devji nager shop no. 5 near narpoli gaw bhivandi.</p>
-                            <p class="text-brandGold font-medium text-xs mt-1 uppercase tracking-wider">Bhiwandi, Maharashtra</p>
+                            <h4 class="font-bold text-gray-900 text-base heading-font">Our Location</h4>
+                            <p class="text-gray-600 text-sm mt-2">Devji nager shop no. 5 near narpoli gaw bhivandi.</p>
                         </div>
                     </div>
                 </a>
 
                 <!-- Phone & WhatsApp Card Layout -->
                 <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 space-y-4">
-                    <!-- Call Section -->
                     <a href="tel:+919975222349" class="flex items-center space-x-4 p-3 bg-white rounded-lg border border-gray-100 hover:border-brandGold transition duration-300 group">
-                        <div class="w-10 h-10 bg-amber-100/60 rounded-lg flex items-center justify-center text-brandMaroon group-hover:bg-brandMaroon group-hover:text-white transition duration-300">
+                        <div class="w-10 h-10 bg-amber-100/60 rounded-lg flex items-center justify-center text-brandMaroon">
                             <i class="fa-solid fa-phone"></i>
                         </div>
-                        <div>
-                            <p class="text-xs text-gray-400 font-medium uppercase">Call Us Directly</p>
-                            <p class="text-gray-800 font-semibold text-sm tracking-wide">+91 9975222349</p>
-                        </div>
+                        <p class="text-gray-800 font-semibold text-sm">+91 9975222349</p>
                     </a>
-
-                    <!-- WhatsApp Section -->
                     <a href="https://wa.me/message/K2B3I46KNT2WK1" target="_blank" class="flex items-center space-x-4 p-3 bg-white rounded-lg border border-gray-100 hover:border-emerald-500 transition duration-300 group">
-                      
+                        <div class="w-10 h-10 bg-emerald-50 rounded-lg flex items-center justify-center text-emerald-600">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <p class="text-gray-800 font-semibold text-sm">Chat on WhatsApp</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
