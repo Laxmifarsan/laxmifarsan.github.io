@@ -39,6 +39,28 @@
             document.getElementById('btn-' + tabId).classList.add('bg-brandMaroon', 'text-white');
             document.getElementById('btn-' + tabId).classList.remove('bg-white', 'text-gray-600');
         }
+
+        // Logic for Day-based item visibility
+        document.addEventListener("DOMContentLoaded", function() {
+            const today = new Date().getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+            const isSunday = today === 0;
+
+            const regularJalebi = document.getElementById('card-jalebi-regular');
+            const gheeJalebi = document.getElementById('card-jalebi-ghee');
+            const khandvi = document.getElementById('card-khandvi');
+
+            if (isSunday) {
+                // Sunday Schedule: Hide Regular Jalebi, Show Ghee Jalebi and Khandvi
+                if (regularJalebi) regularJalebi.style.display = 'none';
+                if (gheeJalebi) gheeJalebi.style.display = 'block';
+                if (khandvi) khandvi.style.display = 'block';
+            } else {
+                // Weekday Schedule: Show Regular Jalebi, Hide Ghee Jalebi and Khandvi
+                if (regularJalebi) regularJalebi.style.display = 'block';
+                if (gheeJalebi) gheeJalebi.style.display = 'none';
+                if (khandvi) khandvi.style.display = 'none';
+            }
+        });
     </script>
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -134,11 +156,10 @@
                 <h2 class="heading-font text-3xl sm:text-4xl font-bold text-brandMaroon mt-1">Our Traditional Menu</h2>
                 <div class="w-24 h-0.5 bg-brandGold mx-auto mt-3"></div>
             </div>
+            
             <!-- Menu Grid Layout -->
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <!-- Cards Omitted for brevity in this example but you have them in your file --
-                        <!-- Menu Grid Layout -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                
                 <!-- Fafda Card -->
                 <div class="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 border-b-4 border-b-brandGold transform hover:-translate-y-1 transition duration-300">
                     <div class="w-full h-44 bg-gray-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
@@ -147,10 +168,11 @@
                     <h3 class="font-bold text-lg text-gray-900 heading-font">Fafda</h3>
                 </div>
                 
-                <!-- Jalebi (Regular) Card -->
-                <div class="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 border-b-4 border-b-brandGold transform hover:-translate-y-1 transition duration-300">
-                    <div class="w-full h-44 bg-gray-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
+                <!-- Jalebi (Regular) Card - Hidden on Sundays -->
+                <div id="card-jalebi-regular" class="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 border-b-4 border-b-brandGold transform hover:-translate-y-1 transition duration-300">
+                    <div class="w-full h-44 bg-gray-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center relative">
                         <img class="w-full h-full object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKYI9-F039mI4l_YiKRmH2dN17J4MR9_Qdew8ZY66syFm7upd-ORXai71E&s=10" alt="Jalebi (Regular)">
+                        <span class="absolute top-2 right-2 bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-0.5 rounded-full border border-amber-200">Mon - Sat</span>
                     </div>
                     <h3 class="font-bold text-lg text-gray-900 heading-font">Jalebi (Regular)</h3>
                 </div>
@@ -163,12 +185,22 @@
                     <h3 class="font-bold text-lg text-gray-900 heading-font">Vanela Gathya</h3>
                 </div>
                 
-                <!-- Jalebi (Ghee) Card -->
-                <div class="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 border-b-4 border-b-brandGold transform hover:-translate-y-1 transition duration-300">
-                    <div class="w-full h-44 bg-gray-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
+                <!-- Jalebi (Ghee) Card - Shown only on Sundays -->
+                <div id="card-jalebi-ghee" class="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 border-b-4 border-b-brandGold transform hover:-translate-y-1 transition duration-300">
+                    <div class="w-full h-44 bg-gray-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center relative">
                         <img class="w-full h-full object-cover" src="https://static.toiimg.com/thumb/53099699.cms?width=1200&height=900" alt="Jalebi (Ghee)">
+                        <span class="absolute top-2 right-2 bg-brandMaroon text-white text-[10px] font-bold px-2 py-0.5 rounded-full">Sunday Special</span>
                     </div>
-                    <h3 class="font-bold text-lg text-gray-900 heading-font">Jalebi (Ghee)</h3>
+                    <h3 class="font-bold text-lg text-gray-900 heading-font">Jalebi (Pure Ghee)</h3>
+                </div>
+
+                <!-- Khandvi Card - Shown only on Sundays -->
+                <div id="card-khandvi" class="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 border-b-4 border-b-brandGold transform hover:-translate-y-1 transition duration-300">
+                    <div class="w-full h-44 bg-gray-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center relative">
+                        <img class="w-full h-full object-cover" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpipingpotcurry.com%2Fwp-content%2Fuploads%2F2021%2F02%2FGujarati-Khandvi-Piping-Pot-Curry-2.jpg&f=1&nofb=1&ipt=7b6070f6727766dfcf235f4a5bcf0724cfaa260968fb00d76de0a2b323990c72" alt="Khandvi">
+                        <span class="absolute top-2 right-2 bg-brandMaroon text-white text-[10px] font-bold px-2 py-0.5 rounded-full">Sunday Special</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-900 heading-font">Khandvi</h3>
                 </div>
                 
                 <!-- Khaman Card -->
@@ -202,9 +234,7 @@
                     </div>
                     <h3 class="font-bold text-lg text-gray-900 heading-font">Dahi Kachori</h3>
                 </div>
-            </div>
-        </div>
-    </section>
+
             </div>
         </div>
     </section>
@@ -220,8 +250,8 @@
 
             <div class="flex justify-center space-x-4 mb-12">
                 <button onclick="switchTab('gathya')" id="btn-gathya" class="px-5 py-2 rounded-full font-semibold text-sm transition shadow-sm bg-brandMaroon text-white">Signature Gathya</button>
-                <button onclick="switchTab('farsan')" id="btn-farsan" class="px-5 py-2 rounded-full font-semibold text-sm transition shadow-sm bg-brandmaroon text-white">Spicy Mixtures</button>
-                <button onclick="switchTab('hampers')" id="btn-hampers" class="px-5 py-2 rounded-full font-semibold text-sm transition shadow-sm bg-brandmaroon text-white">Festive Platters</button>
+                <button onclick="switchTab('farsan')" id="btn-farsan" class="px-5 py-2 rounded-full font-semibold text-sm transition shadow-sm bg-white text-gray-600">Spicy Mixtures</button>
+                <button onclick="switchTab('hampers')" id="btn-hampers" class="px-5 py-2 rounded-full font-semibold text-sm transition shadow-sm bg-white text-gray-600">Festive Platters</button>
             </div>
 
             <div class="max-w-3xl mx-auto bg-white p-8 rounded-2xl border border-gray-100 shadow-sm min-h-[200px] flex items-center justify-center text-center">
@@ -253,34 +283,4 @@
                 <!-- Location Link Card Layout -->
                 <a href="https://maps.app.goo.gl/J8MRjE8oBhTBUEP39" target="_blank" class="block bg-gray-50 p-6 rounded-xl border border-gray-100 group cursor-pointer hover:border-brandGold hover:shadow-md transition duration-300">
                     <div class="flex items-start space-x-4">
-                        <div class="w-12 h-12 bg-amber-100/60 rounded-xl flex items-center justify-center text-brandMaroon shrink-0 group-hover:bg-brandMaroon group-hover:text-white transition duration-300">
-                            <i class="fa-solid fa-map-location-dot text-lg"></i>
-                        </div>
-                        <div class="flex-1">
-                            <h4 class="font-bold text-gray-900 text-base heading-font">Our Location</h4>
-                            <p class="text-gray-600 text-sm mt-2">Devji nager shop no. 5 near narpoli gaw bhivandi.</p>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Phone & WhatsApp Card Layout -->
-                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 space-y-4">
-                    <a href="tel:+919975222349" class="flex items-center space-x-4 p-3 bg-white rounded-lg border border-gray-100 hover:border-brandGold transition duration-300 group">
-                        <div class="w-10 h-10 bg-amber-100/60 rounded-lg flex items-center justify-center text-brandMaroon">
-                            <i class="fa-solid fa-phone"></i>
-                        </div>
-                        <p class="text-gray-800 font-semibold text-sm">+91 9975222349</p>
-                    </a>
-                    <a href="https://wa.me/message/K2B3I46KNT2WK1" target="_blank" class="flex items-center space-x-4 p-3 bg-white rounded-lg border border-gray-100 hover:border-emerald-500 transition duration-300 group">
-                        <div class="w-10 h-10 bg-emerald-50 rounded-lg flex items-center justify-center text-emerald-600">
-                            <i class="fa-brands fa-whatsapp"></i>
-                        </div>
-                        <p class="text-gray-800 font-semibold text-sm">Chat on WhatsApp</p>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-</body>
-</html>
+                        <div class="w-12 h
