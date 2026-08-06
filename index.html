@@ -1,524 +1,345 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laxmi Farsan - Popular Sweets & Authentic Farsan in Bhiwandi</title>
-
-    <!-- SEO Meta Tags for Bhiwandi Sweets & Farsan -->
+  <!-- SEO Meta Tags for Bhiwandi Sweets & Farsan -->
     <meta name="description" content="Discover the most popular sweets and authentic farsan in Bhiwandi at Laxmi Farsan (Bhanjibhai Gathya Wala & Sons). Famous for crisp Fafda, pure ghee Jalebi, Vanela Gathiya, Khaman, and fresh Upvas snacks in Narpoli, Bhiwandi.">
     <meta name="keywords" content="popular sweet in Bhiwandi, best farsan in Bhiwandi, sweets shop Bhiwandi, farsan shop near me Bhiwandi, Laxmi Farsan, Bhanjibhai Gathya Wala, fafda jalebi Bhiwandi, gathiya shop Bhiwandi, Narpoli farsan, Gujarati snacks Bhiwandi, Upvas farali items Bhiwandi">
     <meta name="author" content="Laxmi Farsan - Bhanjibhai Gathya Wala & Sons">
     <meta name="robots" content="index, follow">
-
-    <!-- Open Graph / WhatsApp / Facebook Sharing Meta Tags -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Laxmi Farsan - Popular Sweets & Authentic Farsan in Bhiwandi">
-    <meta property="og:description" content="Bringing you authentic taste & tradition in Bhiwandi. Freshly made Fafda, Jalebi, Gathiya, and Farsan varieties by Bhanjibhai Gathya Wala & Sons.">
-    <meta property="og:locale" content="en_IN">
-
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brandMaroon: '#721c24',
-                        brandGold: '#cca43b',
-                        brandCream: '#fdfbf7',
-                    }
-                }
-            }
-        }
-
-        // JS for Tab Switching in Specialities Section
-        function switchTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('block'));
-
-            document.querySelectorAll('button[id^="btn-"]').forEach(btn => {
-                btn.classList.remove('bg-brandMaroon', 'text-white');
-                btn.classList.add('bg-white', 'text-gray-600');
-            });
-
-            document.getElementById('content-' + tabId).classList.remove('hidden');
-            document.getElementById('content-' + tabId).classList.add('block');
-
-            document.getElementById('btn-' + tabId).classList.add('bg-brandMaroon', 'text-white');
-            document.getElementById('btn-' + tabId).classList.remove('bg-white', 'text-gray-600');
-        }
-
-        // Smooth Scrolling to Section Slide
-        function scrollToSection(sectionId, btnEl) {
-            const container = document.getElementById('sections-carousel');
-            const target = document.getElementById(sectionId);
-            if (container && target) {
-                container.scrollTo({
-                    left: target.offsetLeft - container.offsetLeft,
-                    behavior: 'smooth'
-                });
-            }
-
-            // Update tab button highlights
-            document.querySelectorAll('.section-tab-btn').forEach(btn => {
-                btn.classList.remove('bg-brandMaroon', 'text-white', 'shadow-md');
-                btn.classList.add('bg-white', 'text-gray-700');
-            });
-            if (btnEl) {
-                btnEl.classList.add('bg-brandMaroon', 'text-white', 'shadow-md');
-                btnEl.classList.remove('bg-white', 'text-gray-700');
-            }
-        }
-
-        // Logic for Day-based item visibility (Sunday vs. Weekday)
-        document.addEventListener("DOMContentLoaded", function() {
-            const today = new Date().getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
-            const isSunday = today === 0;
-
-            const regularJalebi = document.getElementById('card-jalebi-regular');
-            const gheeJalebi = document.getElementById('card-jalebi-ghee');
-            const khandvi = document.getElementById('card-khandvi');
-
-            if (isSunday) {
-                if (regularJalebi) regularJalebi.style.display = 'none';
-                if (gheeJalebi) gheeJalebi.style.display = 'block';
-                if (khandvi) khandvi.style.display = 'block';
-            } else {
-                if (regularJalebi) regularJalebi.style.display = 'block';
-                if (gheeJalebi) gheeJalebi.style.display = 'none';
-                if (khandvi) khandvi.style.display = 'none';
-            }
-        });
-    </script>
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Plus+Jakarta+Sans:wght=300;400;500;600&display=swap" rel="stylesheet">
+    <title>Laxmi Farsan - Menu</title>
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .heading-font { font-family: 'Marcellus', serif; }
+        :root {
+            --primary-color: #8b1c1c; /* Deep Maroon from logo */
+            --secondary-color: #b8860b; /* Golden accent */
+            --bg-color: #fdfbf7;
+            --text-color: #333333;
+            --card-bg: #ffffff;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
 
-        /* Custom Scrollbar for Main Section Slider */
-        .horizontal-section-slider {
-            scrollbar-width: thin;
-            scrollbar-color: #cca43b #f1f1f1;
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: var(--card-bg);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            overflow: hidden;
         }
-        .horizontal-section-slider::-webkit-scrollbar {
-            height: 8px;
+
+        .header {
+            text-align: center;
+            padding: 40px 20px 20px 20px;
+            background: linear-gradient(to bottom, #ffffff, #fcf6e8);
+            border-bottom: 3px solid var(--primary-color);
         }
-        .horizontal-section-slider::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 10px;
+
+        .header img {
+            max-width: 250px;
+            height: auto;
+            margin-bottom: 10px;
         }
-        .horizontal-section-slider::-webkit-scrollbar-thumb {
-            background: #cca43b;
-            border-radius: 10px;
+
+        .shop-name {
+            font-size: 2.5em;
+            color: var(--primary-color);
+            margin: 5px 0;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
-        .horizontal-section-slider::-webkit-scrollbar-thumb:hover {
-            background: #721c24;
+
+        .subtitle {
+            font-size: 1.2em;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .info-card {
+            background-color: #fff9ed;
+            border: 1px dashed var(--secondary-color);
+            padding: 15px;
+            border-radius: 8px;
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .info-card p {
+            margin: 5px 0;
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #25D366;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 1.1em;
+            box-shadow: 0 4px 6px rgba(37, 211, 102, 0.3);
+            transition: transform 0.2s;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .menu-content {
+            padding: 30px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-size: 1.6em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .day-badge {
+            background-color: var(--secondary-color);
+            color: white;
+            font-size: 0.55em;
+            padding: 4px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .dynamic-notice {
+            text-align: center;
+            font-style: italic;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+            background-color: #ffeeee;
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        li {
+            background-color: #fafafa;
+            border-left: 5px solid var(--secondary-color);
+            padding: 12px 18px;
+            border-radius: 4px;
+            width: calc(50% - 7.5px);
+            box-sizing: border-box;
+            font-size: 1.1em;
+            font-weight: 500;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            transition: transform 0.1s, box-shadow 0.1s;
+        }
+
+        li:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+            background-color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            li {
+                width: 100%;
+            }
+            .section-title {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
         }
     </style>
 </head>
-<body class="bg-brandCream text-gray-800">
-
-    <!-- Header / Navigation -->
-    <header class="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex flex-col">
-                <span class="heading-font text-2xl font-bold text-brandMaroon tracking-wide">Laxmi Farsan</span>
-                <span class="text-xs uppercase tracking-widest text-brandGold font-semibold -mt-1">Bhanjibhai Gathya Wala & Sons</span>
-            </div>
-            <nav class="flex font-medium text-sm tracking-wide gap-4">
-                <a href="#home" class="text-brandMaroon font-semibold hover:opacity-80 transition">Home</a>
-                <a href="#about" class="text-gray-600 hover:text-brandMaroon transition hidden sm:inline">About</a>
-                <a href="#menu-master-section" class="text-gray-600 hover:text-brandMaroon transition">Menu</a>
-                <a href="#contact" class="text-gray-600 hover:text-brandMaroon transition hidden sm:inline">Contact</a>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="home" class="relative bg-gradient-to-br from-amber-50 to-orange-100/50 py-20 lg:py-28 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
-            <div class="space-y-6 max-w-xl">
-                <span class="text-brandGold font-semibold tracking-widest uppercase text-sm block">Authentic Indian Snacks & Sweets in Bhiwandi</span>
-                <h1 class="heading-font text-4xl sm:text-5xl lg:text-6xl text-brandMaroon font-bold leading-tight">
-                    Authentic Farsan Tradition, Freshly Crafted
-                </h1>
-                <p class="text-gray-600 text-lg leading-relaxed">
-                    Bringing you taste and tradition curated perfectly by Bhanjibhai Gathya Wala & Sons. Every recipe is packed with quality ingredients and crisp flavor.
-                </p>
-                <div class="pt-2 flex flex-wrap gap-4">
-                    <a href="#menu-master-section" class="inline-block bg-brandMaroon text-white px-6 py-3 rounded-lg font-medium shadow-md hover:bg-opacity-90 transition transform hover:-translate-y-0.5">View Our Menu</a>
-                    <a href="https://wa.me/message/K2B3I46KNT2WK1" target="_blank" class="inline-block bg-emerald-600 text-white px-6 py-3 rounded-lg font-medium shadow-md hover:bg-emerald-700 transition transform hover:-translate-y-0.5 flex items-center gap-2">
-                        <i class="fa-brands fa-whatsapp text-lg"></i> Order via WhatsApp
-                    </a>
-                </div>
-            </div>
-            <div class="flex justify-center">
-                <div class="bg-white p-8 rounded-2xl shadow-xl max-w-sm border border-amber-100 text-center space-y-4 transform hover:scale-105 transition duration-300 group cursor-default">
-                    <div class="w-16 h-16 bg-amber-50 rounded-full flex items-center justify-center mx-auto text-brandGold text-2xl group-hover:bg-brandMaroon group-hover:text-white transition duration-300">
-                        <i class="fa-solid fa-leaf"></i>
-                    </div>
-                    <h3 class="heading-font text-xl font-bold text-brandMaroon">100% Pure & Hygienic</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">
-                        Upholding time-honored benchmarks of traditional snack preparation for an uncompromised experience.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Us Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="heading-font text-3xl sm:text-4xl text-brandMaroon font-bold mb-4">About Us</h2>
-                <div class="w-24 h-0.5 bg-brandGold mx-auto"></div>
-            </div>
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="space-y-4 text-gray-600 text-lg leading-relaxed">
-                    <p>
-                        Welcome to <strong class="text-brandMaroon">Laxmi Farsan</strong>, home to authentic Indian savories and popular sweets in Bhiwandi, proudly driven by the heritage of <strong>Bhanjibhai Gathya Wala & Sons</strong>. 
-                    </p>
-                    <p>
-                        For generations, we have stayed committed to capturing the true essence of traditional tastes. By utilizing pristine ingredients and classic cooking techniques, we ensure that every batch retains its distinct crispness and unmatched aroma.
-                    </p>
-                </div>
-                <div class="bg-gradient-to-tr from-brandMaroon to-red-950 p-8 rounded-2xl text-amber-100 text-center space-y-4 shadow-md cursor-pointer transform hover:rotate-1 transition duration-300" onclick="alert('Our heritage is our bond. We source clean, premium ingredients daily!')">
-                    <i class="fa-solid fa-award text-4xl text-brandGold animate-pulse"></i>
-                    <h4 class="heading-font text-2xl font-bold text-white">Our Promise</h4>
-                    <p class="text-sm leading-relaxed opacity-90">
-                        Whether it is for your daily tea-time rituals, a family function, or a festive celebration, our mission remains to deliver premium, authentic crunch directly to your table.
-                    </p>
-                    <span class="inline-block text-xs bg-white/10 text-white px-3 py-1 rounded-full border border-white/20 mt-2">Click to view philosophy</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Master Menu Section with Horizontal Sliding Sections -->
-    <section id="menu-master-section" class="py-16 bg-amber-50/40 border-t border-b border-orange-100/60 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-6">
-                <span class="text-xs uppercase tracking-widest text-brandGold font-bold">Bhanjibhai Gathya Wala & Sons</span>
-                <h2 class="heading-font text-3xl sm:text-4xl font-bold text-brandMaroon mt-1">Our Traditional Menu</h2>
-                <div class="w-24 h-0.5 bg-brandGold mx-auto mt-3"></div>
-            </div>
-
-            <!-- Category Tabs for Horizontal Navigation -->
-            <div class="flex justify-center items-center gap-3 mb-8 overflow-x-auto pb-2">
-                <button onclick="scrollToSection('section-snacks', this)" class="section-tab-btn px-6 py-2.5 rounded-full font-semibold text-sm transition bg-brandMaroon text-white shadow-md border border-brandMaroon shrink-0">
-                    Snacks Menu
-                </button>
-                <button onclick="scrollToSection('section-farsan', this)" class="section-tab-btn px-6 py-2.5 rounded-full font-semibold text-sm transition bg-white text-gray-700 border border-gray-200 hover:border-brandGold shrink-0">
-                    Farsan Varieties
-                </button>
-                <button onclick="scrollToSection('section-upvas', this)" class="section-tab-btn px-6 py-2.5 rounded-full font-semibold text-sm transition bg-white text-gray-700 border border-gray-200 hover:border-brandGold shrink-0">
-                    Upvas Items
-                </button>
-            </div>
-
-            <p class="text-xs text-gray-400 text-center mb-6 flex items-center justify-center gap-1">
-                <span>Swipe whole section left or right</span> ➔
-            </p>
-
-            <!-- Horizontal Carousel Wrapper for Sections -->
-            <div id="sections-carousel" class="horizontal-section-slider flex overflow-x-auto snap-x snap-mandatory scroll-smooth pb-8 -mx-4 px-4">
-                
-                <!-- SECTION 1: SNACKS -->
-                <div id="section-snacks" class="w-full flex-shrink-0 snap-start min-w-full px-2">
-                    <div class="bg-white/80 backdrop-blur-sm p-6 sm:p-8 rounded-3xl border border-orange-100 shadow-sm">
-                        <h3 class="heading-font text-2xl font-bold text-brandMaroon mb-6 text-center border-b pb-3 border-amber-100">
-                            Snacks
-                        </h3>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                            <!-- Fafda -->
-                            <div class="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 border-b-4 border-b-brandGold transform hover:-translate-y-1 transition duration-300">
-                                <div class="w-full h-44 bg-gray-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
-                                    <img class="w-full h-full object-cover" src="https://cf-images.assettype.com/saamtv%2F2025-05-24%2F92yeeapc%2FFafda-Recipe?rect=0%2C406%2C720%2C540&w=1200&h=900&auto=format%2Ccompress&fit=crop" alt="Fafda">
-                                </div>
-                                <h4 class="font-bold text-lg text-gray-900 heading-font">Fafda</h4>
-                            </div>
-
-                            <!-- Jalebi Regular -->
-                            <div id="card-jalebi-regular" class="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 border-b-4 border-b-brandGold transform hover:-translate-y-1 transition duration-300">
-                                <div class="w-full h-44 bg-gray-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center relative">
-                                    <img class="w-full h-full object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKYI9-F039mI4l_YiKRmH2dN17J4MR9_Qdew8ZY66syFm7upd-ORXai71E&s=10" alt="Jalebi (Regular)">
-                                    <span class="absolute top-2 right-2 bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-0.5 rounded-full border border-amber-200">Mon - Sat</span>
-                                </div>
-                                <h4 class="font-bold text-lg text-gray-900 heading-font">Jalebi (Regular)</h4>
-                            </div>
-
-                            <!-- Vanela Gathya -->
-                            <div class="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 border-b-4 border-b-brandGold transform hover:-translate-y-1 transition duration-300">
-                                <div class="w-full h-44 bg-gray-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
-                                    <img class="w-full h-full object-cover" src="https://www.nehascookbook.com/wp-content/uploads/2022/11/Vanela-gathiya-WS-500x500.jpg" alt="Vanela Gathya">
-                                </div>
-                                <h4 class="font-bold text-lg text-gray-900 heading-font">Vanela Gathya</h4>
-                            </div>
-
-                            <!-- Jalebi Pure Ghee (Sunday Only) -->
-                            <div id="card-jalebi-ghee" class="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 border-b-4 border-b-brandGold transform hover:-translate-y-1 transition duration-300">
-                                <div class="w-full h-44 bg-gray-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center relative">
-                                    <img class="w-full h-full object-cover" src="https://static.toiimg.com/thumb/53099699.cms?width=1200&height=900" alt="Jalebi (Ghee)">
-                                    <span class="absolute top-2 right-2 bg-brandMaroon text-white text-[10px] font-bold px-2 py-0.5 rounded-full">Sunday Special</span>
-                                </div>
-                                <h4 class="font-bold text-lg text-gray-900 heading-font">Jalebi (Pure Ghee)</h4>
-                            </div>
-
-                            <!-- Khandvi (Sunday Only) -->
-                            <div id="card-khandvi" class="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 border-b-4 border-b-brandGold transform hover:-translate-y-1 transition duration-300">
-                                <div class="w-full h-44 bg-gray-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center relative">
-                                    <img class="w-full h-full object-cover" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpipingpotcurry.com%2Fwp-content%2Fuploads%2F2021%2F02%2FGujarati-Khandvi-Piping-Pot-Curry-2.jpg&f=1&nofb=1&ipt=7b6070f6727766dfcf235f4a5bcf0724cfaa260968fb00d76de0a2b323990c72" alt="Khandvi">
-                                    <span class="absolute top-2 right-2 bg-brandMaroon text-white text-[10px] font-bold px-2 py-0.5 rounded-full">Sunday Special</span>
-                                </div>
-                                <h4 class="font-bold text-lg text-gray-900 heading-font">Khandvi</h4>
-                            </div>
-
-                            <!-- Khaman -->
-                            <div class="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 border-b-4 border-b-brandGold transform hover:-translate-y-1 transition duration-300">
-                                <div class="w-full h-44 bg-gray-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
-                                    <img class="w-full h-full object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3UJlEHeKisuScn5pu3-7Ai_oaVMeQn9RU2OjC96NVKTDCVK5svTFeEiA&s=10" alt="Khaman">
-                                </div>
-                                <h4 class="font-bold text-lg text-gray-900 heading-font">Khaman</h4>
-                            </div>
-
-                            <!-- Vadapav -->
-                            <div class="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 border-b-4 border-b-brandGold transform hover:-translate-y-1 transition duration-300">
-                                <div class="w-full h-44 bg-gray-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
-                                    <img class="w-full h-full object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUVAnCf6oH7-t5ZGV7ZDElAK4AuWPLubLwzfVRUR_-Sg&s=10" alt="Vadapav">
-                                </div>
-                                <h4 class="font-bold text-lg text-gray-900 heading-font">Vadapav</h4>
-                            </div>
-
-                            <!-- Samosa -->
-                            <div class="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 border-b-4 border-b-brandGold transform hover:-translate-y-1 transition duration-300">
-                                <div class="w-full h-44 bg-gray-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
-                                    <img class="w-full h-full object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVnM9-UQkg8-slBwaHoqrVDM6shxKn8CXsOCObKs0G_UqIRG4MpQ71OZc&s=10" alt="Samosa">
-                                </div>
-                                <h4 class="font-bold text-lg text-gray-900 heading-font">Samosa</h4>
-                            </div>
-
-                            <!-- Dahi Kachori -->
-                            <div class="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 border-b-4 border-b-brandGold transform hover:-translate-y-1 transition duration-300">
-                                <div class="w-full h-44 bg-gray-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
-                                    <img class="w-full h-full object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQal3L1UC7c-AurL7Wvv7t52pZyPrl9GXHe-usHHWYKkdCek2cSpuqO-ng&s=10" alt="Dahi Kachori">
-                                </div>
-                                <h4 class="font-bold text-lg text-gray-900 heading-font">Dahi Kachori</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SECTION 2: FARSAN VARIETIES -->
-                <div id="section-farsan" class="w-full flex-shrink-0 snap-start min-w-full px-2">
-                    <div class="bg-white/80 backdrop-blur-sm p-6 sm:p-8 rounded-3xl border border-orange-100 shadow-sm">
-                        <h3 class="heading-font text-2xl font-bold text-brandMaroon mb-6 text-center border-b pb-3 border-amber-100">
-                            Farsan Varieties
-                        </h3>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                            <!-- Papdi -->
-                            <div class="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 border-b-4 border-b-brandGold transform hover:-translate-y-1 transition duration-300">
-                                <div class="w-full h-44 bg-gray-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
-                                    <img class="w-full h-full object-cover" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F5.imimg.com%2Fdata5%2FSELLER%2FDefault%2F2023%2F12%2F370482623%2FKS%2FID%2FHM%2F187496276%2Fgujarati-papdi-1000x1000.png&f=1&nofb=1&ipt=65a6bff81d5fb508f5176014b4d54ad24c9aae7250cd1ec49ed28547c3ceafbc" alt="Papdi">
-                                </div>
-                                <h4 class="font-bold text-lg text-gray-900 heading-font">Papdi</h4>
-                            </div>
-
-                            <!-- Bhavnagri Gathiya (Thin) -->
-                            <div class="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 border-b-4 border-b-brandGold transform hover:-translate-y-1 transition duration-300">
-                                <div class="w-full h-44 bg-gray-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
-                                    <img class="w-full h-full object-cover" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fheerson.com%2Fcdn%2Fshop%2Fproducts%2Fbhavnagarigathiya_shadow-Copy.jpg%3Fv%3D1646126562&f=1&nofb=1&ipt=c6344a31fdbd017329913d52301bcdd7b9297a899b6f430f2820659707649237" alt="Bhavnagri Gathiya (Thin)">
-                                </div>
-                                <h4 class="font-bold text-lg text-gray-900 heading-font">Bhavnagri Gathiya (Thin)</h4>
-                            </div>
-
-                            <!-- Bhavnagri Gathiya (Thick) -->
-                            <div class="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 border-b-4 border-b-brandGold transform hover:-translate-y-1 transition duration-300">
-                                <div class="w-full h-44 bg-gray-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
-                                    <img class="w-full h-full object-cover" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftiimg.tistatic.com%2Ffp%2F1%2F003%2F750%2Fbhavnagari-gathiya-351.jpg&f=1&nofb=1&ipt=debe77a922bf323eb2c8cffa73676adf3e6ca3e113c15ec7d4eea3faa9b8ea7f" alt="Bhavnagri Gathiya (Thick)">
-                                </div>
-                                <h4 class="font-bold text-lg text-gray-900 heading-font">Bhavnagri Gathiya (Thick)</h4>
-                            </div>
-
-                            <!-- Tikha Gathiya -->
-                            <div class="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 border-b-4 border-b-brandGold transform hover:-translate-y-1 transition duration-300">
-                                <div class="w-full h-44 bg-gray-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
-                                    <img class="w-full h-full object-cover" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F5.imimg.com%2Fdata5%2FSELLER%2FDefault%2F2024%2F4%2F406661237%2FJI%2FJM%2FRW%2F142803604%2Ftikha-gathiya-namkeen-1000x1000.jpeg&f=1&nofb=1&ipt=1bbbf05edecf08a855724180b4e44e7e33090e0233f9f379f300913a0874adc5" alt="Tikha Gathiya">
-                                </div>
-                                <h4 class="font-bold text-lg text-gray-900 heading-font">Tikha Gathiya</h4>
-                            </div>
-
-                            <!-- Champakali Gathiya (Thin) -->
-                            <div class="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 border-b-4 border-b-brandGold transform hover:-translate-y-1 transition duration-300">
-                                <div class="w-full h-44 bg-gray-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
-                                    <img class="w-full h-full object-cover" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Findiashopping.io%2Fcdn%2Fshop%2Ffiles%2FBestChampakaliGathiyaFromBholeGNamkeen.webp%3Fv%3D1753379489&f=1&nofb=1&ipt=a3ed0e30d6d555cf1dd0e638d0379f653eb29dae839d7456fc7203246fe1ea5c" alt="Champakali Gathiya (Thin)">
-                                </div>
-                                <h4 class="font-bold text-lg text-gray-900 heading-font">Champakali Gathiya (Thin)</h4>
-                            </div>
-
-                            <!-- Champakali Gathiya (Thick) -->
-                            <div class="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 border-b-4 border-b-brandGold transform hover:-translate-y-1 transition duration-300">
-                                <div class="w-full h-44 bg-gray-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
-                                    <img class="w-full h-full object-cover" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdukaan.b-cdn.net%2F700x700%2Fwebp%2Fupload_file_service%2F6b3d9b79-58ab-4dc2-8e88-83270dc702db%2Fchampakali.jpg&f=1&nofb=1&ipt=3901a59ff82ba2522d75da604a1b7c02b067015bda23e9140b229e13912e0fda" alt="Champakali Gathiya (Thick)">
-                                </div>
-                                <h4 class="font-bold text-lg text-gray-900 heading-font">Champakali Gathiya (Thick)</h4>
-                            </div>
-
-                            <!-- Lasun Chivda -->
-                            <div class="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 border-b-4 border-b-brandGold transform hover:-translate-y-1 transition duration-300">
-                                <div class="w-full h-44 bg-gray-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
-                                    <img class="w-full h-full object-cover" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F5.imimg.com%2Fdata5%2FJG%2FIW%2FMY-28147413%2Flasun-chivda.jpeg&f=1&nofb=1&ipt=8272779dad7ad94a6009d1fb5c39b050dca8cc89b8edea2a30c63168e803eb3f" alt="Lasun Chivda">
-                                </div>
-                                <h4 class="font-bold text-lg text-gray-900 heading-font">Lasun Chivda</h4>
-                            </div>
-
-                            <!-- Bakharvadi Small -->
-                            <div class="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 border-b-4 border-b-brandGold transform hover:-translate-y-1 transition duration-300">
-                                <div class="w-full h-44 bg-gray-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
-                                    <img class="w-full h-full object-cover" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.lonavalafoods.com%2Fcdn%2Fshop%2Fproducts%2FBhakarwadiSmall_1.jpg%3Fv%3D1611135204%26width%3D5500&f=1&nofb=1&ipt=c57f4bdc10372c4cecaa56bee744d4e5220fb4092d5c5bb842c984b9c8811efc" alt="Bakharvadi Small">
-                                </div>
-                                <h4 class="font-bold text-lg text-gray-900 heading-font">Bakharvadi (Small)</h4>
-                            </div>
-
-                            <!-- Bakharvadi Big -->
-                            <div class="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 border-b-4 border-b-brandGold transform hover:-translate-y-1 transition duration-300">
-                                <div class="w-full h-44 bg-gray-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
-                                    <img class="w-full h-full object-cover" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F5.imimg.com%2Fdata5%2FCG%2FLL%2FMY-38313840%2Fbig-bhakarwadi-1000x1000.jpg&f=1&nofb=1&ipt=c3271dd31790bd986abe6dbcf7d96163049324e8c37fc02322d32e6c1fea94e2" alt="Bakharvadi Big">
-                                </div>
-                                <h4 class="font-bold text-lg text-gray-900 heading-font">Bakharvadi (Big)</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SECTION 3: UPVAS ITEMS -->
-                <div id="section-upvas" class="w-full flex-shrink-0 snap-start min-w-full px-2">
-                    <div class="bg-white/80 backdrop-blur-sm p-6 sm:p-8 rounded-3xl border border-orange-100 shadow-sm">
-                        <h3 class="heading-font text-2xl font-bold text-brandMaroon mb-6 text-center border-b pb-3 border-amber-100">
-                            Upvas Items
-                        </h3>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                            <!-- Potato Wafer -->
-                            <div class="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 border-b-4 border-b-brandGold transform hover:-translate-y-1 transition duration-300">
-                                <div class="w-full h-44 bg-gray-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
-                                    <img class="w-full h-full object-cover" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs.yimg.com%2Fcd%2Fresizer%2F2.0%2FFIT_TO_WIDTH-w3312%2F60f81b189736b4b03210d0533cdaaae81d746a8d.jpg&f=1&nofb=1&ipt=5445a245d03b12c1ca59be0f38ef391d65c3a6174f84efb25b79ca90e6ea1fe9" alt="Potato Wafer">
-                                </div>
-                                <h4 class="font-bold text-lg text-gray-900 heading-font">Potato Wafer</h4>
-                            </div>
-
-                            <!-- Potato Sali -->
-                            <div class="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 border-b-4 border-b-brandGold transform hover:-translate-y-1 transition duration-300">
-                                <div class="w-full h-44 bg-gray-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
-                                    <img class="w-full h-full object-cover" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F5.imimg.com%2Fdata5%2FOR%2FEK%2FMY-8196743%2Fpotato-sali-500x500.jpg&f=1&nofb=1&ipt=ddca4ed0f37d57470ab1bc36ee7d62213ab7a83d446e504e2ad9b6d9cd893bf0" alt="Potato Sali">
-                                </div>
-                                <h4 class="font-bold text-lg text-gray-900 heading-font">Potato Sali</h4>
-                            </div>
-
-                            <!-- Banana Chips -->
-                            <div class="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 border-b-4 border-b-brandGold transform hover:-translate-y-1 transition duration-300">
-                                <div class="w-full h-44 bg-gray-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
-                                    <img class="w-full h-full object-cover" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsandigeatdoors.com%2Fwp-content%2Fuploads%2F2022%2F12%2FSandige-At-Doors-Banana-Chips.jpg&f=1&nofb=1&ipt=e64959c6e89faa72139a1cf1e8d1ab6d82d7519cab7a82b439dbc5daae7b68ff" alt="Banana Chips">
-                                </div>
-                                <h4 class="font-bold text-lg text-gray-900 heading-font">Banana Chips</h4>
-                            </div>
-
-                            <!-- Dryfruit Farali Chivda -->
-                            <div class="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 border-b-4 border-b-brandGold transform hover:-translate-y-1 transition duration-300">
-                                <div class="w-full h-44 bg-gray-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
-                                    <img class="w-full h-full object-cover" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fprashantcorner.com%2Fcdn%2Fshop%2Ffiles%2FFaraliCHivadaSR-1.png%3Fv%3D1727703340%26width%3D1066&f=1&nofb=1&ipt=f5a3acecf1caadd66672236b6f5d8c6bc46c094519fbb26efb971ea51b142202" alt="Dryfruit Farali Chivda">
-                                </div>
-                                <h4 class="font-bold text-lg text-gray-900 heading-font">Dryfruit Farali Chivda</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Specialities Showcase Section -->
-    <section id="specialities" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="heading-font text-3xl font-bold text-brandMaroon">Our Specialities</h2>
-                <div class="w-24 h-0.5 bg-brandGold mx-auto mt-3 mb-4"></div>
-                <p class="text-gray-500">Click the categories below to preview our master selections</p>
-            </div>
-
-            <div class="flex justify-center space-x-4 mb-12">
-                <button onclick="switchTab('gathya')" id="btn-gathya" class="px-5 py-2 rounded-full font-semibold text-sm transition shadow-sm bg-brandMaroon text-white">Signature Gathya</button>
-                <button onclick="switchTab('farsan')" id="btn-farsan" class="px-5 py-2 rounded-full font-semibold text-sm transition shadow-sm bg-white text-gray-600">Spicy Mixtures</button>
-                <button onclick="switchTab('hampers')" id="btn-hampers" class="px-5 py-2 rounded-full font-semibold text-sm transition shadow-sm bg-white text-gray-600">Festive Platters</button>
-            </div>
-
-            <div class="max-w-3xl mx-auto bg-white p-8 rounded-2xl border border-gray-100 shadow-sm min-h-[200px] flex items-center justify-center text-center">
-                <div id="content-gathya" class="space-y-4 tab-content block">
-                    <h3 class="font-bold text-xl text-brandMaroon heading-font">Pure Besan Gathya</h3>
-                    <p class="text-gray-600 max-w-xl mx-auto">Finely textured, flawlessly crisp, and melted down to perfection according to old-world heritage recipes.</p>
-                </div>
-                <div id="content-farsan" class="space-y-4 tab-content hidden">
-                    <h3 class="font-bold text-xl text-brandMaroon heading-font">Spicy Mix Farsan</h3>
-                    <p class="text-gray-600 max-w-xl mx-auto">A rich, balanced blend of quality home spices, native crunchy sev, and fried lentils.</p>
-                </div>
-                <div id="content-hampers" class="space-y-4 tab-content hidden">
-                    <h3 class="font-bold text-xl text-brandMaroon heading-font">Festive Gift Boxes</h3>
-                    <p class="text-gray-600 max-w-xl mx-auto">Custom arrangement variations of light, savory options curated cleanly to order.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Us Section -->
-    <section id="contact" class="py-20 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="heading-font text-3xl font-bold text-brandMaroon">Contact Us</h2>
-                <div class="w-24 h-0.5 bg-brandGold mx-auto mt-3"></div>
-            </div>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
             
-            <div class="grid md:grid-cols-2 gap-6">
-                <!-- Location Link Card Layout -->
-                <a href="https://maps.app.goo.gl/J8MRjE8oBhTBUEP39" target="_blank" class="block bg-gray-50 p-6 rounded-xl border border-gray-100 group cursor-pointer hover:border-brandGold hover:shadow-md transition duration-300">
+            <!-- Included in logo, but adding text for accessibility and structure -->
+            <div class="shop-name">Laxmi Farsan</div>
+            <div class="subtitle">by Bhanjibhai Gathya Wala & Sons</div>
+          <div class="subtitle">scinc 1995</div>
+            
+            <div class="info-card">
+                <p>📍 <strong>Address:</strong> 979 Shanti Apt, Shop No 5 and 6, Devji Nagar, Narpoli, Bhiwandi, Thane</p>
+                <p>📞 <strong>Call Us:</strong> +91 9975222349 &nbsp;|&nbsp; +91 7028590909 &nbsp;|&nbsp; +91 7709856567</p>
+              <!-- Location Link Card Layout -->
+                <a  href="https://maps.app.goo.gl/J8MRjE8oBhTBUEP39" target="_blank" class="block bg-white p-6 rounded-xl border border-gray-100 group cursor-pointer hover:border-brandGold hover:shadow-md transition duration-300">
                     <div class="flex items-start space-x-4">
-                        <div class="w-12 h-12 bg-amber-100/60 rounded-xl flex items-center justify-center text-brandMaroon shrink-0 group-hover:bg-brandMaroon group-hover:text-white transition duration-300">
+                        <div class="w-12 h-12 bg-amber-100/60 rounded-xl flex items-center justify-center text-brandMaroon shrink-0 mt-1 group-hover:bg-brandMaroon group-hover:text-white transition duration-300">
                             <i class="fa-solid fa-map-location-dot text-lg"></i>
                         </div>
                         <div class="flex-1">
-                            <h4 class="font-bold text-gray-900 text-base heading-font">Our Location</h4>
-                            <p class="text-gray-600 text-sm mt-2">Devji nager shop no. 5 near narpoli gaw bhivandi.</p>
+                            <div class="flex items-center justify-between flex-wrap gap-2">
+                                <h4 class="font-bold text-gray-900 text-lg heading-font">Our Location</h4>
+                                <span class="text-xs text-brandMaroon font-semibold border border-red-200 bg-red-50 px-2 py-0.5 rounded flex items-center gap-1 transition duration-300 group-hover:bg-brandMaroon group-hover:text-white group-hover:border-transparent">
+                                    Open Maps <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </span>
+                            </div>
+                            <p id="store-address" class="text-gray-600 mt-2 leading-relaxed">Devji nager shop no. 5 near narpoli gaw bhivandi.</p>
+                            <p class="text-brandGold font-medium text-sm mt-1 uppercase tracking-wider">Bhiwandi, Maharashtra</p>
                         </div>
                     </div>
                 </a>
-
-                <!-- Phone & WhatsApp Card Layout -->
-                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 space-y-4">
-                    <a href="tel:+919975222349" class="flex items-center space-x-4 p-3 bg-white rounded-lg border border-gray-100 hover:border-brandGold transition duration-300 group">
-                        <div class="w-10 h-10 bg-amber-100/60 rounded-lg flex items-center justify-center text-brandMaroon">
-                            <i class="fa-solid fa-phone"></i>
-                        </div>
-                        <p class="text-gray-800 font-semibold text-sm">+91 9975222349</p>
-                    </a>
-                    <a href="https://wa.me/message/K2B3I46KNT2WK1" target="_blank" class="flex items-center space-x-4 p-3 bg-white rounded-lg border border-gray-100 hover:border-emerald-500 transition duration-300 group">
-                        <div class="w-10 h-10 bg-emerald-50 rounded-lg flex items-center justify-center text-emerald-600">
-                            <i class="fa-brands fa-whatsapp"></i>
-                        </div>
-                        <p class="text-gray-800 font-semibold text-sm">Chat on WhatsApp</p>
-                    </a>
-                </div>
             </div>
+            </div>
+            
+            <a align="center" href="https://wa.me/message/K2B3I46KNT2WK1" class="whatsapp-btn" target="_blank">
+                💬 Order on WhatsApp
+            </a>
         </div>
-    </section>
 
-    <!-- Footer Section -->
-    <footer class="bg-brandMaroon text-amber-100 py-8 text-center text-sm border-t border-brandGold/30">
-        <p>&copy; Laxmi Farsan - Bhanjibhai Gathya Wala & Sons. Authentic Sweets & Farsan in Bhiwandi. All Rights Reserved.</p>
-    </footer>
+        <div class="menu-content">
+            
+            <!-- Dynamic Snacks Section -->
+            <div class="section" id="snacks-section">
+                <div class="section-title">
+                    Snacks Section 
+                    <span id="day-indicator" class="day-badge"></span>
+                </div>
+                <div class="dynamic-notice" id="menu-notice">Checking today's special menu...</div>
+                
+                <!-- Weekdays Menu List -->
+                <ul id="weekday-snacks" style="display: none;">
+                    <li>Fafda</li>
+                    <li>Jalebi</li>
+                    <li>Vanela Gathya</li>
+                    <li>Khaman</li>
+                    <li>Vada Pav</li>
+                    <li>Dahi Kachori</li>
+                    <li>Samosa</li>
+                </ul>
 
+                <!-- Sunday Menu List -->
+                <ul id="sunday-snacks" style="display: none;">
+                    <li>Fafda</li>
+                    <li>Vanela Gathya</li>
+                    <li>Desi Ghee Jalebi</li>
+                    <li>Khandvi</li>
+                    <li>Patra</li>
+                    <li>Kothimbir Vadi</li>
+                    <li>Khaman</li>
+                    <li>Vada Pav</li>
+                    <li>Samosa</li>
+                    <li>Dahi Kachori</li>
+                </ul>
+            </div>
+
+            <!-- Farsan Section -->
+            <div class="section">
+                <div class="section-title">Farsan Section</div>
+                <ul>
+                    <li>Papdi</li>
+                    <li>Bhavnagri Gathiya Patla</li>
+                    <li>Bhavnagri Gathiya Jada</li>
+                    <li>Champakali Gathiya Patla</li>
+                    <li>Champakali Gathiya Jada</li>
+                    <li>Tikaha Gathiya</li>
+                    <li>Methi Gathiya</li>
+                    <li>Yellow Sev</li>
+                    <li>Red Sev</li>
+                    <li>Makai Pava Chivda</li>
+                    <li>Jamnagri Pava Chivda</li>
+                    <li>Mix Farsan</li>
+                    <li>Missal Mix</li>
+                    <li>Lasun Chivda</li>
+                    <li>Tikhi Sev Bundi</li>
+                    <li>Khari Bundi</li>
+                    <li>Bhakarvadi Small</li>
+                    <li>Bakharvadi Big</li>
+                    <li>Jeera Masal Puri</li>
+                </ul>
+            </div>
+
+            <!-- Upvas Section -->
+            <div class="section">
+                <div class="section-title">Upvas Section</div>
+                <ul>
+                    <li>Salty Potato Sali</li>
+                    <li>Spicy Potato Sali</li>
+                    <li>Potato Chivda</li>
+                    <li>Potato Chips</li>
+                    <li>Banana Wafer Yellow gol</li>
+                    <li>Banana Wafer Nilone Yellow gol</li>
+                    <li>Banana Wafer Mari Masala gol</li>
+                    <li>Banana Wafer Tomato gol</li>
+                    <li>Banana Wafer Plain Salted gol</li>
+                    <li>Banana Wafer Spicy lambi</li>
+                    <li>Banana Wafer Mari Masala Lambi </li>
+                    <li>Banana Wafer Yellow lambi</li>
+                    <li>Sabudana Chivda</li>
+                </ul>
+            </div>
+
+            <!-- Bakery Section -->
+            <div class="section">
+                <div class="section-title">Bakery Section</div>
+                <ul>
+                    <li>Khari</li>
+                    <li>Toast</li>
+                    <li>Cookies</li>
+                    <li>Slice Cake</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- JavaScript to toggle Sunday Special and Weekday Menus -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get current day of the week (0 = Sunday, 1-6 = Monday-Saturday)
+            const today = new Date().getDay(); 
+            
+            const weekdaySnacks = document.getElementById('weekday-snacks');
+            const sundaySnacks = document.getElementById('sunday-snacks');
+            const dayIndicator = document.getElementById('day-indicator');
+            const menuNotice = document.getElementById('menu-notice');
+
+            if (today === 0) {
+                // It's Sunday! Show Sunday specials
+                sundaySnacks.style.display = 'flex';
+                dayIndicator.textContent = 'Sunday Special';
+                menuNotice.textContent = "🎉 It's Sunday! Showing our exclusive Sunday Special snacks.";
+            } else {
+                // It's a Weekday! Show regular snacks
+                weekdaySnacks.style.display = 'flex';
+                dayIndicator.textContent = 'Weekday Menu';
+                menuNotice.textContent = "Showing today's available weekday snacks.";
+            }
+        });
+    </script>
 </body>
 </html>
