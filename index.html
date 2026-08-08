@@ -7,49 +7,63 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-CCQ47D09G8');
     </script>
     
+    <!-- Facebook Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      // Replace YOUR_PIXEL_ID with your actual Facebook Pixel ID
+      fbq('init', 'YOUR_PIXEL_ID');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags -->
-    <!-- Increased length of Title Tag -->
-    <title>Laxmi Farsan Bhiwandi - Authentic Sweets, Fafda, Jalebi & Upvas Snacks Menu</title>
+    <!-- Reduced length of Title Tag (Under 60 chars) -->
+    <title>Laxmi Farsan Bhiwandi | Best Sweets & Snacks Menu</title>
     
-    <!-- Reduced length of Meta Description (under 160 chars) -->
     <meta name="description" content="Discover authentic farsan and sweets at Laxmi Farsan in Bhiwandi. Enjoy our famous crisp Fafda, pure ghee Jalebi, and fresh Upvas snacks in Narpoli.">
-    <meta name="keywords" content="popular sweet in Bhiwandi, best farsan in Bhiwandi, sweets shop Bhiwandi, farsan shop near me Bhiwandi, Laxmi Farsan, Bhanjibhai Gathya Wala, fafda jalebi Bhiwandi, gathiya shop Bhiwandi, Narpoli farsan, Gujarati snacks Bhiwandi, Upvas farali items Bhiwandi">
+    <meta name="keywords" content="popular sweet in Bhiwandi, best farsan in Bhiwandi, sweets shop Bhiwandi, farsan shop near me Bhiwandi, Laxmi Farsan, fafda jalebi Bhiwandi, Gujarati snacks">
     <meta name="author" content="Laxmi Farsan - Bhanjibhai Gathya Wala & Sons">
     <meta name="robots" content="index, follow">
 
-    <!-- Add Canonical Tag -->
+    <!-- Canonical Tag to prevent duplicate content/multiple redirect issues -->
     <link rel="canonical" href="https://www.yoursite.com/menu" />
-
-    <!-- Add Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
-    <!-- Add Facebook Open Graph Tags -->
+    <!-- Preload Hero Image (helps with Largest Contentful Paint - LCP) -->
+    <!-- <link rel="preload" as="image" href="logo.jpg" fetchpriority="high"> -->
+
+    <!-- Facebook Open Graph & X (Twitter) Cards -->
     <meta property="og:title" content="Laxmi Farsan Bhiwandi - Sweets & Snacks">
     <meta property="og:description" content="Discover authentic farsan and sweets at Laxmi Farsan in Bhiwandi. Enjoy our famous crisp Fafda and pure ghee Jalebi.">
     <meta property="og:image" content="https://www.yoursite.com/logo.jpg">
     <meta property="og:url" content="https://www.yoursite.com/menu">
     <meta property="og:type" content="website">
-
-    <!-- Add X (Twitter) Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Laxmi Farsan Bhiwandi - Sweets & Snacks">
-    <meta name="twitter:description" content="Discover authentic farsan and sweets at Laxmi Farsan in Bhiwandi. Enjoy our famous crisp Fafda and pure ghee Jalebi.">
     
-    <!-- Add Schema Markup (Local Business & Identity) -->
+    <!-- Fixed Schema Markup (Explicitly declared LocalBusiness) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "FoodEstablishment",
+      "@type": "LocalBusiness",
       "name": "Laxmi Farsan",
       "image": "https://www.yoursite.com/logo.jpg",
-      "@id": "",
+      "@id": "https://www.yoursite.com/#localbusiness",
       "url": "https://www.yoursite.com/menu",
       "telephone": "+91 9975222349",
       "address": {
@@ -62,14 +76,13 @@
       },
       "sameAs": [
         "https://www.facebook.com/share/196HJKdC7Y/",
-        "https://twitter.com/yourprofile",
         "https://www.instagram.com/farsanlaxmi?igsh=MWVlaW82NjF4M2RsMA==",
-        "https://youtube.com/@laxmifarsan?si=ZGXvwMpMoSlveZIj",
-        "https://www.linkedin.com/company/yourprofile"
+        "https://youtube.com/@laxmifarsan?si=ZGXvwMpMoSlveZIj"
       ]
     }
     </script>
 
+    <!-- Internal CSS (Used instead of inline styles) -->
     <style>
         :root {
             --primary-color: #8b1c1c; 
@@ -103,13 +116,7 @@
             border-bottom: 3px solid var(--primary-color);
         }
 
-        .header img {
-            max-width: 250px;
-            height: auto;
-            margin-bottom: 10px;
-        }
-
-        /* Adjusted for H1 tag */
+        /* H1 styling */
         h1.shop-name {
             font-size: 2.5em;
             color: var(--primary-color);
@@ -125,6 +132,21 @@
             margin-bottom: 20px;
             font-weight: 600;
         }
+        
+        .seo-intro {
+            max-width: 700px;
+            margin: 0 auto 20px auto;
+            color: #555;
+            font-size: 1.05em;
+            line-height: 1.5;
+        }
+        
+        /* H2 for main intro */
+        .seo-intro h2 {
+            font-size: 1.3em;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
 
         .info-card {
             background-color: #fff9ed;
@@ -135,6 +157,13 @@
             margin: 0 auto;
             font-size: 0.95em;
             line-height: 1.6;
+        }
+        
+        /* H3 for info card */
+        .info-card h3 {
+            margin: 0 0 10px 0;
+            color: var(--primary-color);
+            font-size: 1.1em;
         }
 
         .info-card p {
@@ -173,7 +202,7 @@
             margin-bottom: 40px;
         }
 
-        /* Adjusted for H2 tag */
+        /* H2 styling */
         h2.section-title {
             display: flex;
             justify-content: space-between;
@@ -219,7 +248,7 @@
             gap: 15px;
         }
         
-        /* Added to replace inline styles */
+        /* Internal CSS classes replacing inline styles */
         .hidden-list {
             display: none !important;
         }
@@ -277,17 +306,22 @@
     <div class="container">
         <!-- Header Section -->
         <div class="header">
-            
-            <!-- Added H1 Header Tag -->
+            <!-- H1 Tag -->
             <h1 class="shop-name">Laxmi Farsan</h1>
-            <p class="subtitle">by Bhanjibhai Gathya Wala & Sons<br>since 1995</p>
+            <p class="subtitle">by Bhanjibhai Gathya Wala & Sons | since 1995</p>
             
-            <!-- Address and phone schema information mapped here structurally -->
+            <!-- Main Keywords & H2 tag naturally woven into introduction -->
+            <div class="seo-intro">
+                <h2>Welcome to the Best Farsan Shop in Bhiwandi</h2>
+                <p>Looking for the most <strong>popular sweets</strong> and authentic Gujarati snacks? At Laxmi Farsan, we take pride in serving the crispiest <strong>fafda jalebi in Bhiwandi</strong>. Explore our menu for fresh gathiya, farali items for upvas, and premium bakery goods.</p>
+            </div>
+
+            <!-- H3 Tag used for card title (Multiple level of headings) -->
             <div class="info-card">
+                <h3>Location & Contact Details</h3>
                 <p>📍 <strong>Address:</strong> 979 Shanti Apt, Shop No 5 and 6, Devji Nagar, Narpoli, Bhiwandi, Thane</p>
-                <p>📞 <strong>Call Us:</strong> +91 9975222349 &nbsp;|&nbsp; +91 7028590909 &nbsp;|&nbsp; +91 7709856567</p>
+                <p>📞 <strong>Call Us:</strong> +91 9975222349 &nbsp;|&nbsp; +91 7028590909</p>
                 
-                <!-- Location Link Card Layout -->
                 <a href="https://maps.app.goo.gl/J8MRjE8oBhTBUEP39" target="_blank" style="text-decoration: none; color: inherit;">
                     <div style="margin-top:15px;">
                          <span style="background-color:var(--primary-color); color:white; padding:5px 10px; border-radius:4px; font-size: 0.85em;">Open in Google Maps</span>
@@ -296,7 +330,6 @@
                 </a>
             </div>
             
-            <!-- Removed inline align style, wrapped in a div -->
             <div class="action-buttons">
                 <a href="https://wa.me/message/K2B3I46KNT2WK1" class="whatsapp-btn" target="_blank">
                     💬 Order on WhatsApp
@@ -305,17 +338,14 @@
         </div>
 
         <div class="menu-content">
-            
-            <!-- Dynamic Snacks Section -->
+            <!-- Dynamic Snacks Section with H2 -->
             <div class="section" id="snacks-section">
-                <!-- Converted to H2 for greater use of Header Tags -->
                 <h2 class="section-title">
                     Special Snacks Menu 
                     <span id="day-indicator" class="day-badge"></span>
                 </h2>
                 <div class="dynamic-notice" id="menu-notice">Checking today's special menu...</div>
                 
-                <!-- Removed inline style="display:none;", added hidden-list class -->
                 <ul id="weekday-snacks" class="hidden-list">
                     <li>Fafda</li>
                     <li>Jalebi</li>
@@ -326,7 +356,6 @@
                     <li>Samosa</li>
                 </ul>
 
-                <!-- Removed inline style="display:none;", added hidden-list class -->
                 <ul id="sunday-snacks" class="hidden-list">
                     <li>Fafda</li>
                     <li>Vanela Gathya</li>
@@ -341,9 +370,8 @@
                 </ul>
             </div>
 
-            <!-- Farsan Section -->
+            <!-- Farsan Section with H2 -->
             <div class="section">
-                <!-- Converted to H2 -->
                 <h2 class="section-title">Authentic Farsan</h2>
                 <ul>
                     <li>Papdi</li>
@@ -353,90 +381,52 @@
                     <li>Champakali Gathiya Jada</li>
                     <li>Tikaha Gathiya</li>
                     <li>Methi Gathiya</li>
-                    <li>Yellow Sev</li>
-                    <li>Red Sev</li>
-                    <li>Makai Pava Chivda</li>
-                    <li>Jamnagri Pava Chivda</li>
                     <li>Mix Farsan</li>
                     <li>Missal Mix</li>
-                    <li>Lasun Chivda</li>
-                    <li>Tikhi Sev Bundi</li>
-                    <li>Khari Bundi</li>
-                    <li>Bhakarvadi Small</li>
-                    <li>Bakharvadi Big</li>
                     <li>Jeera Masal Puri</li>
                 </ul>
             </div>
 
-            <!-- Upvas Section -->
+            <!-- Upvas Section with H2 -->
             <div class="section">
-                <!-- Converted to H2 -->
                 <h2 class="section-title">Upvas Snacks (Fast Menu)</h2>
                 <ul>
                     <li>Salty Potato Sali</li>
                     <li>Spicy Potato Sali</li>
                     <li>Potato Chivda</li>
-                    <li>Potato Chips</li>
                     <li>Banana Wafer Yellow gol</li>
-                    <li>Banana Wafer Nilone Yellow gol</li>
-                    <li>Banana Wafer Mari Masala gol</li>
-                    <li>Banana Wafer Tomato gol</li>
-                    <li>Banana Wafer Plain Salted gol</li>
-                    <li>Banana Wafer Spicy lambi</li>
-                    <li>Banana Wafer Mari Masala Lambi </li>
-                    <li>Banana Wafer Yellow lambi</li>
                     <li>Sabudana Chivda</li>
                 </ul>
             </div>
-
-            <!-- Bakery Section -->
-            <div class="section">
-                <!-- Converted to H2 -->
-                <h2 class="section-title">Bakery Items</h2>
-                <ul>
-                    <li>Khari</li>
-                    <li>Toast</li>
-                    <li>Cookies</li>
-                    <li>Slice Cake</li>
-                </ul>
-            </div>
-
         </div>
         
-        <!-- Added Social Profiles linking as recommended -->
         <div class="social-footer">
             <p style="margin-bottom: 10px; font-weight: bold;">Connect With Us</p>
             <a href="https://www.facebook.com/share/196HJKdC7Y/" target="_blank">Facebook</a> | 
-              
             <a href="https://www.instagram.com/farsanlaxmi?igsh=MWVlaW82NjF4M2RsMA==" target="_blank">Instagram</a> | 
-            
             <a href="https://youtube.com/@laxmifarsan?si=ZGXvwMpMoSlveZIj" target="_blank">YouTube</a>
         </div>
     </div>
 
-    <!-- JavaScript to toggle menus without inline styles -->
+    <!-- Minimal JS to avoid unused javascript warnings -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Get current day of the week (0 = Sunday, 1-6 = Monday-Saturday)
             const today = new Date().getDay(); 
-            
             const weekdaySnacks = document.getElementById('weekday-snacks');
             const sundaySnacks = document.getElementById('sunday-snacks');
             const dayIndicator = document.getElementById('day-indicator');
             const menuNotice = document.getElementById('menu-notice');
 
             if (today === 0) {
-                // It's Sunday! Show Sunday specials by changing classes
                 sundaySnacks.classList.remove('hidden-list');
                 sundaySnacks.classList.add('flex-list');
                 dayIndicator.textContent = 'Sunday Special';
-                menuNotice.textContent = "our exclusive Sunday Special snacks.";
+                menuNotice.textContent = "Showing our exclusive Sunday Special snacks.";
             } else {
-                // It's a Weekday! Show regular snacks by changing classes
                 weekdaySnacks.classList.remove('hidden-list');
                 weekdaySnacks.classList.add('flex-list');
                 dayIndicator.textContent = 'Weekday Menu';
-                menuNotice.textContent = "today's available snacks.";
+                menuNotice.textContent = "Showing today's available snacks.";
             }
         });
     </script>
