@@ -20,11 +20,10 @@
       t.src=v;s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
-      // Replace YOUR_PIXEL_ID with your actual Facebook Pixel ID
       fbq('init', 'YOUR_PIXEL_ID');
       fbq('track', 'PageView');
     </script>
-    <noscript><img height="1" width="1" style="display:none"
+    <noscript><img height="1" width="1" class="hidden-list"
       src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Facebook Pixel Code -->
@@ -33,30 +32,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags -->
-    <!-- Reduced length of Title Tag (Under 60 chars) -->
-    <title>Laxmi Farsan Bhiwandi | Best Sweets & Snacks Menu</title>
+    <!-- Increased length of Title Tag -->
+    <title>Laxmi Farsan Bhiwandi | Best Sweets, Authentic Gujarati Snacks, Fafda, Jalebi & Bakery Menu</title>
     
-    <meta name="description" content="Discover authentic farsan and sweets at Laxmi Farsan in Bhiwandi. Enjoy our famous crisp Fafda, pure ghee Jalebi, and fresh Upvas snacks in Narpoli.">
-    <meta name="keywords" content="popular sweet in Bhiwandi, best farsan in Bhiwandi, sweets shop Bhiwandi, farsan shop near me Bhiwandi, Laxmi Farsan, fafda jalebi Bhiwandi, Gujarati snacks">
+    <meta name="description" content="Discover authentic farsan and sweets at Laxmi Farsan in Bhiwandi. Enjoy our famous crisp Fafda, pure ghee Jalebi, fresh Upvas snacks, and bakery items in Narpoli.">
+    <meta name="keywords" content="popular sweet in Bhiwandi, best farsan in Bhiwandi, sweets shop Bhiwandi, farsan shop near me Bhiwandi, Laxmi Farsan, fafda jalebi Bhiwandi, Gujarati snacks, Bakery Bhiwandi">
     <meta name="author" content="Laxmi Farsan - Bhanjibhai Gathya Wala & Sons">
     <meta name="robots" content="index, follow">
 
-    <!-- Canonical Tag to prevent duplicate content/multiple redirect issues -->
+    <!-- Canonical Tag -->
     <link rel="canonical" href="https://www.yoursite.com/menu" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
-    <!-- Preload Hero Image (helps with Largest Contentful Paint - LCP) -->
-    <!-- <link rel="preload" as="image" href="logo.jpg" fetchpriority="high"> -->
-
     <!-- Facebook Open Graph & X (Twitter) Cards -->
-    <meta property="og:title" content="Laxmi Farsan Bhiwandi - Sweets & Snacks">
-    <meta property="og:description" content="Discover authentic farsan and sweets at Laxmi Farsan in Bhiwandi. Enjoy our famous crisp Fafda and pure ghee Jalebi.">
+    <meta property="og:title" content="Laxmi Farsan Bhiwandi - Sweets, Snacks & Bakery">
+    <meta property="og:description" content="Discover authentic farsan and sweets at Laxmi Farsan in Bhiwandi. Enjoy our famous crisp Fafda, pure ghee Jalebi, and fresh bakery items.">
     <meta property="og:image" content="https://www.yoursite.com/logo.jpg">
     <meta property="og:url" content="https://www.yoursite.com/menu">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     
-    <!-- Fixed Schema Markup (Explicitly declared LocalBusiness) -->
+    <!-- Local Business Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -77,12 +73,14 @@
       "sameAs": [
         "https://www.facebook.com/share/196HJKdC7Y/",
         "https://www.instagram.com/farsanlaxmi?igsh=MWVlaW82NjF4M2RsMA==",
-        "https://youtube.com/@laxmifarsan?si=ZGXvwMpMoSlveZIj"
+        "https://youtube.com/@laxmifarsan?si=ZGXvwMpMoSlveZIj",
+        "https://twitter.com/yourprofile",
+        "https://www.linkedin.com/company/yourprofile"
       ]
     }
     </script>
 
-    <!-- Internal CSS (Used instead of inline styles) -->
+    <!-- Internal CSS (No inline styles) -->
     <style>
         :root {
             --primary-color: #8b1c1c; 
@@ -98,6 +96,7 @@
             color: var(--text-color);
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
 
         .container {
@@ -116,7 +115,6 @@
             border-bottom: 3px solid var(--primary-color);
         }
 
-        /* H1 styling */
         h1.shop-name {
             font-size: 2.5em;
             color: var(--primary-color);
@@ -134,18 +132,22 @@
         }
         
         .seo-intro {
-            max-width: 700px;
+            max-width: 750px;
             margin: 0 auto 20px auto;
             color: #555;
             font-size: 1.05em;
-            line-height: 1.5;
         }
         
-        /* H2 for main intro */
         .seo-intro h2 {
-            font-size: 1.3em;
+            font-size: 1.4em;
             color: var(--primary-color);
             margin-bottom: 10px;
+        }
+        
+        .section-desc {
+            margin-bottom: 15px;
+            color: #555;
+            font-size: 0.95em;
         }
 
         .info-card {
@@ -156,10 +158,8 @@
             max-width: 600px;
             margin: 0 auto;
             font-size: 0.95em;
-            line-height: 1.6;
         }
         
-        /* H3 for info card */
         .info-card h3 {
             margin: 0 0 10px 0;
             color: var(--primary-color);
@@ -170,6 +170,37 @@
             margin: 5px 0;
         }
         
+        /* Map Link Styles replacing inline CSS */
+        .map-link-wrap {
+            text-decoration: none; 
+            color: inherit;
+        }
+        .map-container {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #ffffff;
+            border-radius: 6px;
+            border: 1px solid #f0e6d2;
+            transition: background-color 0.2s;
+        }
+        .map-container:hover {
+            background-color: #fcf8f0;
+        }
+        .map-badge {
+            background-color: var(--primary-color); 
+            color: white; 
+            padding: 5px 10px; 
+            border-radius: 4px; 
+            font-size: 0.85em;
+            display: inline-block;
+        }
+        .map-text {
+            margin-top: 10px; 
+            font-size: 0.9em; 
+            color: #555;
+            margin-bottom: 0;
+        }
+
         .action-buttons {
             text-align: center;
             margin-top: 20px;
@@ -202,7 +233,6 @@
             margin-bottom: 40px;
         }
 
-        /* H2 styling */
         h2.section-title {
             display: flex;
             justify-content: space-between;
@@ -212,7 +242,7 @@
             padding: 12px 20px;
             border-radius: 6px;
             font-size: 1.6em;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             font-weight: 700;
             letter-spacing: 1px;
             margin-top: 0;
@@ -248,7 +278,6 @@
             gap: 15px;
         }
         
-        /* Internal CSS classes replacing inline styles */
         .hidden-list {
             display: none !important;
         }
@@ -306,26 +335,25 @@
     <div class="container">
         <!-- Header Section -->
         <div class="header">
-            <!-- H1 Tag -->
             <h1 class="shop-name">Laxmi Farsan</h1>
             <p class="subtitle">by Bhanjibhai Gathya Wala & Sons | since 1995</p>
             
-            <!-- Main Keywords & H2 tag naturally woven into introduction -->
+            <!-- Increased Text Content -->
             <div class="seo-intro">
-                <h2>Welcome to the Best Farsan Shop in Bhiwandi</h2>
-                <p>Looking for the most <strong>popular sweets</strong> and authentic Gujarati snacks? At Laxmi Farsan, we take pride in serving the crispiest <strong>fafda jalebi in Bhiwandi</strong>. Explore our menu for fresh gathiya, farali items for upvas, and premium bakery goods.</p>
+                <h2>Welcome to the Best Farsan & Sweets Shop in Bhiwandi</h2>
+                <p>Looking for the most <strong>popular sweets</strong> and authentic Gujarati snacks? At Laxmi Farsan, we take pride in serving the crispiest <strong>fafda jalebi in Bhiwandi</strong>. We source only the finest ingredients to prepare our daily fresh gathiya, special farali items for upvas, and premium bakery goods. Whether you are craving a spicy Missal Mix, sweet Desi Ghee Jalebi, or our famous Sunday specials, we have something to delight every palate.</p>
             </div>
 
-            <!-- H3 Tag used for card title (Multiple level of headings) -->
             <div class="info-card">
                 <h3>Location & Contact Details</h3>
                 <p>📍 <strong>Address:</strong> 979 Shanti Apt, Shop No 5 and 6, Devji Nagar, Narpoli, Bhiwandi, Thane</p>
                 <p>📞 <strong>Call Us:</strong> +91 9975222349 &nbsp;|&nbsp; +91 7028590909</p>
                 
-                <a href="https://maps.app.goo.gl/J8MRjE8oBhTBUEP39" target="_blank" style="text-decoration: none; color: inherit;">
-                    <div style="margin-top:15px;">
-                         <span style="background-color:var(--primary-color); color:white; padding:5px 10px; border-radius:4px; font-size: 0.85em;">Open in Google Maps</span>
-                         <p style="margin-top: 10px; font-size: 0.9em; color: #555;">Devji Nagar Shop no. 5 Near Narpoli Gaw, Bhiwandi, Maharashtra</p>
+                <!-- Google Maps Link with Inline Styles Removed -->
+                <a href="https://maps.app.goo.gl/J8MRjE8oBhTBUEP39" target="_blank" class="map-link-wrap">
+                    <div class="map-container">
+                         <span class="map-badge">Open in Google Maps</span>
+                         <p class="map-text">Devji Nagar Shop no. 5 Near Narpoli Gaw, Bhiwandi, Maharashtra</p>
                     </div>
                 </a>
             </div>
@@ -338,12 +366,13 @@
         </div>
 
         <div class="menu-content">
-            <!-- Dynamic Snacks Section with H2 -->
+            <!-- Dynamic Snacks Section -->
             <div class="section" id="snacks-section">
                 <h2 class="section-title">
                     Special Snacks Menu 
                     <span id="day-indicator" class="day-badge"></span>
                 </h2>
+                <p class="section-desc">Our daily fresh prepared snacks are perfect for breakfast or evening tea. We offer special items on Sundays!</p>
                 <div class="dynamic-notice" id="menu-notice">Checking today's special menu...</div>
                 
                 <ul id="weekday-snacks" class="hidden-list">
@@ -370,9 +399,10 @@
                 </ul>
             </div>
 
-            <!-- Farsan Section with H2 -->
+            <!-- Farsan Section -->
             <div class="section">
                 <h2 class="section-title">Authentic Farsan</h2>
+                <p class="section-desc">Stock up on your favorite traditional Gujarati dry snacks. From mild Bhavnagri Gathiya to spicy Tikaha Gathiya and Chivda.</p>
                 <ul>
                     <li>Papdi</li>
                     <li>Bhavnagri Gathiya Patla</li>
@@ -387,9 +417,10 @@
                 </ul>
             </div>
 
-            <!-- Upvas Section with H2 -->
+            <!-- Upvas Section -->
             <div class="section">
                 <h2 class="section-title">Upvas Snacks (Fast Menu)</h2>
+                <p class="section-desc">Observing a fast? Explore our specialized farali menu made strictly observing upvas cooking guidelines.</p>
                 <ul>
                     <li>Salty Potato Sali</li>
                     <li>Spicy Potato Sali</li>
@@ -398,17 +429,31 @@
                     <li>Sabudana Chivda</li>
                 </ul>
             </div>
+
+            <!-- RESTORED Bakery Section -->
+            <div class="section">
+                <h2 class="section-title">Bakery Items</h2>
+                <p class="section-desc">Enjoy our freshly baked everyday essentials to pair with your morning or evening chai.</p>
+                <ul>
+                    <li>Khari</li>
+                    <li>Toast</li>
+                    <li>Cookies</li>
+                    <li>Slice Cake</li>
+                </ul>
+            </div>
         </div>
         
         <div class="social-footer">
             <p style="margin-bottom: 10px; font-weight: bold;">Connect With Us</p>
             <a href="https://www.facebook.com/share/196HJKdC7Y/" target="_blank">Facebook</a> | 
+            <a href="#" target="_blank">X (Twitter)</a> | 
             <a href="https://www.instagram.com/farsanlaxmi?igsh=MWVlaW82NjF4M2RsMA==" target="_blank">Instagram</a> | 
+            <a href="#" target="_blank">LinkedIn</a> | 
             <a href="https://youtube.com/@laxmifarsan?si=ZGXvwMpMoSlveZIj" target="_blank">YouTube</a>
         </div>
     </div>
 
-    <!-- Minimal JS to avoid unused javascript warnings -->
+    <!-- Minimal JS -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const today = new Date().getDay(); 
