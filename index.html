@@ -419,15 +419,15 @@
                     <li>Mix Farsan</li>
                     <li>Missal Mix</li>
                     <li>Jeera Masal Puri</li>
-<li>Yellow Sev</li>
-<li>Red Sev</li>
-<li>Makai Pava Chivda</li>
-<li>Jamnagri Pava Chivda</li>
-<li>Lasun Chivda</li>
-<li>Tikhi Sev Bundi</li>
-<li>Khari Bundi</li>
-<li>Bhakarvadi Small</li>
-<li>Bakharvadi Big</li>
+                    <li>Yellow Sev</li>
+                    <li>Red Sev</li>
+                    <li>Makai Pava Chivda</li>
+                    <li>Jamnagri Pava Chivda</li>
+                    <li>Lasun Chivda</li>
+                    <li>Tikhi Sev Bundi</li>
+                    <li>Khari Bundi</li>
+                    <li>Bhakarvadi Small</li>
+                    <li>Bakharvadi Big</li>
                 </ul>
             </div>
 
@@ -441,15 +441,15 @@
                     <li>Potato Chivda</li>
                     <li>Banana Wafer Yellow gol</li>
                     <li>Sabudana Chivda</li>
-               <li>Potato Chips</li>
-<li>Banana Wafer Nilone Yellow gol</li>
-<li>Banana Wafer Mari Masala gol</li>
-<li>Banana Wafer Tomato gol</li>
-<li>Banana Wafer Plain Salted gol</li>
-<li>Banana Wafer Spicy lambi</li>
-<li>Banana Wafer Mari Masala Lambi </li>
-<li>Banana Wafer Yellow lambi</li>
- </ul>
+                    <li>Potato Chips</li>
+                    <li>Banana Wafer Nilone Yellow gol</li>
+                    <li>Banana Wafer Mari Masala gol</li>
+                    <li>Banana Wafer Tomato gol</li>
+                    <li>Banana Wafer Plain Salted gol</li>
+                    <li>Banana Wafer Spicy lambi</li>
+                    <li>Banana Wafer Mari Masala Lambi </li>
+                    <li>Banana Wafer Yellow lambi</li>
+                 </ul>
             </div>
 
             <!-- Bakery Section -->
@@ -478,17 +478,44 @@
     <!-- Minimal JS -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const today = new Date().getDay(); 
+            const todayDate = new Date();
+            const todayDay = todayDate.getDay(); 
+            
+            // Format today's date as MM-DD to check against festival list
+            const month = String(todayDate.getMonth() + 1).padStart(2, '0');
+            const day = String(todayDate.getDate()).padStart(2, '0');
+            const formattedToday = `${month}-${day}`;
+
+            // List of Hindu Festival dates (Format: MM-DD)
+            const hinduFestivals = [
+                "01-14", // Makar Sankranti
+                "03-03", // Holi 
+                "08-28", // Raksha Bandhan 
+                "09-04", // Janmashtami 
+                "09-14", // Ganesh Chaturthi 
+                "10-19", // Dussehra 
+                "11-08"  // Diwali 
+            ];
+
+            const isFestival = hinduFestivals.includes(formattedToday);
+            const isSunday = (todayDay === 0);
+
             const weekdaySnacks = document.getElementById('weekday-snacks');
             const sundaySnacks = document.getElementById('sunday-snacks');
             const dayIndicator = document.getElementById('day-indicator');
             const menuNotice = document.getElementById('menu-notice');
 
-            if (today === 0) {
+            if (isSunday || isFestival) {
                 sundaySnacks.classList.remove('hidden-list');
                 sundaySnacks.classList.add('flex-list');
-                dayIndicator.textContent = 'Sunday Special';
-                menuNotice.textContent = " our exclusive Sunday Special snacks.";
+                
+                if (isFestival) {
+                    dayIndicator.textContent = 'Festival Special';
+                    menuNotice.textContent = "Enjoy our exclusive Hindu Festival Special snacks today!";
+                } else {
+                    dayIndicator.textContent = 'Sunday Special';
+                    menuNotice.textContent = "Enjoy our exclusive Sunday Special snacks.";
+                }
             } else {
                 weekdaySnacks.classList.remove('hidden-list');
                 weekdaySnacks.classList.add('flex-list');
