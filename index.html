@@ -33,18 +33,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags -->
-    <!-- Fixed Title Tag Length (Fits recommended 30-60 chars) -->
     <title>Laxmi Farsan Bhiwandi | Sweets & Snacks Menu</title>
     
-    <!-- Fixed Meta Description Length (Fits recommended 120-160 chars) -->
     <meta name="description" content="Discover authentic farsan, crisp Fafda, pure ghee Jalebi, fresh Upvas snacks, and bakery items at Laxmi Farsan in Bhiwandi.">
     
     <meta name="keywords" content="popular sweet in Bhiwandi, best farsan in Bhiwandi, sweets shop Bhiwandi, farsan shop near me Bhiwandi, Laxmi Farsan, fafda jalebi Bhiwandi, Gujarati snacks, Bakery Bhiwandi">
     <meta name="author" content="Laxmi Farsan - Bhanjibhai Gathya Wala & Sons">
     <meta name="robots" content="index, follow">
 
-    <!-- Fixed Canonical Loop Detection -->
-    <!-- IMPORTANT: Make sure this URL exactly matches your actual root domain -->
     <link rel="canonical" href="https://www.yoursite.com/" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
@@ -174,7 +170,6 @@
             margin: 5px 0;
         }
         
-        /* Map Link Styles replacing inline CSS */
         .map-link-wrap {
             text-decoration: none; 
             color: inherit;
@@ -486,10 +481,12 @@
             const day = String(todayDate.getDate()).padStart(2, '0');
             const formattedToday = `${month}-${day}`;
 
-            // List of Hindu Festival dates (Format: MM-DD)
-            const hinduFestivals = [
+            // List of Special Dates (Festivals and National Holidays)
+            const specialDates = [
                 "01-14", // Makar Sankranti
+                "01-26", // Republic Day
                 "03-03", // Holi 
+                "08-15", // Independence Day
                 "08-28", // Raksha Bandhan 
                 "09-04", // Janmashtami 
                 "09-14", // Ganesh Chaturthi 
@@ -497,7 +494,7 @@
                 "11-08"  // Diwali 
             ];
 
-            const isFestival = hinduFestivals.includes(formattedToday);
+            const isSpecialDate = specialDates.includes(formattedToday);
             const isSunday = (todayDay === 0);
 
             const weekdaySnacks = document.getElementById('weekday-snacks');
@@ -505,13 +502,13 @@
             const dayIndicator = document.getElementById('day-indicator');
             const menuNotice = document.getElementById('menu-notice');
 
-            if (isSunday || isFestival) {
+            if (isSunday || isSpecialDate) {
                 sundaySnacks.classList.remove('hidden-list');
                 sundaySnacks.classList.add('flex-list');
                 
-                if (isFestival) {
-                    dayIndicator.textContent = 'Festival Special';
-                    menuNotice.textContent = "Enjoy our exclusive Hindu Festival Special snacks today!";
+                if (isSpecialDate) {
+                    dayIndicator.textContent = 'Holiday Special';
+                    menuNotice.textContent = "Enjoy our exclusive Holiday & Festival Special snacks today!";
                 } else {
                     dayIndicator.textContent = 'Sunday Special';
                     menuNotice.textContent = "Enjoy our exclusive Sunday Special snacks.";
